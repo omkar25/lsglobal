@@ -25,6 +25,130 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
+  "welcome": {
+    "subtitle": "GLOBAL TRADE, LOCAL EXPERTISE",
+    "title1": "Connecting Markets,",
+    "title2": "Building",
+    "titleHighlight": "Trust",
+    "paragraph1": "Welcome to LS Global Traders — your trusted sourcing and buying partner across diverse industries. We specialize in providing high-quality products ranging from medical equipment to spices worldwide.",
+    "paragraph2": "From healthcare to handicrafts, our expertise bridges cultures and connects international markets seamlessly. We believe in fostering long-term partnerships built on reliability, transparency, and mutual growth.",
+    "globalReach": "GLOBAL REACH",
+    "globalReachDesc": "Expanding quality trade networks across industries and countries with unmatched reliability.",
+    "trustedPartnership": "TRUSTED PARTNERSHIP",
+    "trustedPartnershipDesc": "Building long-term business relationships rooted in transparency, value, and global excellence."
+  },
+  "aboutSection": {
+    "subtitle": "ABOUT US",
+    "title1": "Driving Global Trade",
+    "title2": "Excellence Worldwide",
+    "description": "LS Global Traders is a dynamic buying and sourcing company connecting industries globally. We ensure quality, transparency, and trust across every trade partnership we establish.",
+    "globalClients": "Global Clients",
+    "globalClientsCount": "50 +",
+    "yearsExperience": "Years Experience",
+    "yearsExperienceCount": "10 +"
+  },
+  "coreStrengths": {
+    "subtitle": "OUR CORE STRENGTHS",
+    "title1": "Delivering Quality Beyond",
+    "title2": "Global Borders",
+    "strength1Title": "Reliable Sourcing",
+    "strength1Desc": "We connect clients with trusted suppliers ensuring consistent quality and timely delivery.",
+    "strength2Title": "Global Network",
+    "strength2Desc": "Our strong international presence helps businesses expand seamlessly across multiple markets.",
+    "strength3Title": "Quality Assurance",
+    "strength3Desc": "Every product undergoes strict quality checks to meet international trade standards.",
+    "successSubtitle": "GLOBAL SUCCESS STORIES",
+    "successTitle1": "Proven Impact",
+    "successTitle2": "Across",
+    "successTitle3": "Continents",
+    "successDesc": "LS Global Traders continues to strengthen global partnerships with consistent quality and service. Our international presence reflects excellence, reliability, and long-term business growth worldwide.",
+    "aboutUs": "About Us",
+    "clientSatisfaction": "Client Satisfaction",
+    "clientSatisfactionPercent": "98%",
+    "clientSatisfactionDesc": "Delivering excellence that earns global trust and repeat collaborations.",
+    "onTimeDelivery": "On-Time Delivery",
+    "onTimeDeliveryPercent": "96%",
+    "onTimeDeliveryDesc": "Ensuring prompt and reliable shipment for every international order."
+  },
+  "industries": {
+    "subtitle": "INDUSTRIES WE SPECIALIZE IN",
+    "title": "Our",
+    "titleHighlight": "Industries",
+    "knowMore": "KNOW MORE",
+    "viewAll": "View All Industries",
+    "handicrafts": {
+      "title": "Handicrafts",
+      "description": "Showcasing authentic handmade creations blending traditional artistry, cultural heritage, and modern global appeal beautifully."
+    },
+    "homeTextiles": {
+      "title": "Home Textiles",
+      "description": "Offering premium home textiles combining comfort, elegance, and durability for refined contemporary living worldwide."
+    },
+    "chemicals": {
+      "title": "Chemicals",
+      "description": "Delivering superior industrial and specialty chemicals supporting innovation, performance, and sustainable global manufacturing growth."
+    },
+    "medicalEquipment": {
+      "title": "Medical & Surgical Equipment",
+      "description": "Providing reliable, high-quality medical supplies ensuring safety, precision, and global healthcare excellence consistently."
+    },
+    "spices": {
+      "title": "Spices Items",
+      "description": "Supplying pure Indian spices delivering rich aroma, bold flavor, and authentic global culinary experiences."
+    }
+  },
+  "contactForm": {
+    "subtitle": "REQUEST A",
+    "title": "Free Quote",
+    "name": "Name*",
+    "email": "Email*",
+    "phone": "Phone*",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "SEND MESSAGE",
+    "success": "Thank you! Your message has been sent successfully.",
+    "error": "One or more fields have an error. Please check and try again.",
+    "validation": {
+      "nameRequired": "The field is required.",
+      "emailRequired": "The field is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneRequired": "The field is required.",
+      "phoneInvalid": "Please enter a valid phone number."
+    }
+  },
+  "products": {
+    "subtitle": "EXPLORE NOW!",
+    "title": "Our",
+    "titleHighlight": "Products",
+    "readMore": "READ MORE",
+    "viewMore": "View More Products",
+    "items": {
+      "dyesPigments": {
+        "title": "Dyes and Pigments",
+        "description": "Our range of dyes and pigments brings vibrant, long-lasting color solutions to multiple industries."
+      },
+      "textileCrafts": {
+        "title": "Textile Crafts",
+        "description": "Bathroom textiles, including towels, bathrobes, shower curtains, and mats, are essential."
+      },
+      "curtainsDrapes": {
+        "title": "Curtains and Drapes",
+        "description": "Enhance your interiors with our elegant range of curtains and drapes. Crafted from high-quality."
+      },
+      "surgicalGloves": {
+        "title": "Surgical Gloves and Masks",
+        "description": "Our high-quality surgical gloves and masks ensure maximum hygiene and protection."
+      },
+      "turmericPowder": {
+        "title": "Turmeric Powder",
+        "description": "Our turmeric powder is sourced from premium farms, rich in aroma and curcumin content."
+      },
+      "pharmaceuticalIntermediates": {
+        "title": "Pharmaceutical Intermediates",
+        "description": "We supply premium-grade pharmaceutical intermediates essential for drug formulation."
+      }
+    }
+  },
   "carousel": {
     "aboutUs": "ABOUT US",
     "contactUs": "CONTACT US",

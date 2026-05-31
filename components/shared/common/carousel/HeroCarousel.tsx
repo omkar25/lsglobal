@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import BlurText from "@/components/ui/BlurText";
 
 const slides = [
   { id: 1, image: "/images/sliders/slider_01.png", position: "right" },
@@ -18,8 +19,12 @@ export function HeroCarousel() {
   const t = useTranslations("carousel");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
+  const [showDescription, setShowDescription] = useState(false);
+  const [showButtons, setShowButtons] = useState(false);
 
   const goToSlide = useCallback((index: number) => {
+    setShowDescription(false);
+    setShowButtons(false);
     setCurrentSlide(index);
     setAnimationKey((prev) => prev + 1);
   }, []);
@@ -82,42 +87,49 @@ export function HeroCarousel() {
               style={{ animationDelay: "0ms", animationFillMode: "both" }}
             />
 
-            {/* Title */}
-            <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight animate-fade-in-up drop-shadow-lg"
-              style={{ animationDelay: "200ms", animationFillMode: "both" }}
-            >
-              {t(`slides.${slide.id}.title`)}
-            </h1>
+            {/* Title with BlurText */}
+            <BlurText
+              text={t(`slides.${slide.id}.title`)}
+              delay={150}
+              animateBy="words"
+              direction="top"
+              onAnimationComplete={() => setShowDescription(true)}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg"
+            />
 
-            {/* Description */}
-            <p
-              className="text-base md:text-lg text-gray-100 mb-8 leading-relaxed animate-fade-in-up drop-shadow-md"
-              style={{ animationDelay: "400ms", animationFillMode: "both" }}
-            >
-              {t(`slides.${slide.id}.description`)}
-            </p>
+            {/* Description with BlurText */}
+            {showDescription && (
+              <BlurText
+                text={t(`slides.${slide.id}.description`)}
+                delay={80}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={() => setShowButtons(true)}
+                className="text-base md:text-lg text-gray-100 mb-8 leading-relaxed drop-shadow-md"
+              />
+            )}
 
             {/* Buttons */}
-            <div
-              className={`flex gap-4 animate-fade-in-up ${
-                isLeft ? "justify-start" : "justify-end"
-              }`}
-              style={{ animationDelay: "600ms", animationFillMode: "both" }}
-            >
-              <Link
-                href="/about"
-                className="px-8 py-3 bg-white/90 border-2 border-[#313639] text-[#313639] font-semibold hover:bg-[#313639] hover:text-white hover:border-[#313639] transition-all duration-300"
+            {showButtons && (
+              <div
+                className={`flex gap-4 animate-fade-in-up ${
+                  isLeft ? "justify-start" : "justify-end"
+                }`}
               >
-                {t("aboutUs")}
-              </Link>
-              <Link
-                href="/contact"
-                className="px-8 py-3 bg-transparent border-2 border-[#D28E45] text-white font-semibold hover:bg-[#D28E45] hover:text-white transition-all duration-300"
-              >
-                {t("contactUs")}
-              </Link>
-            </div>
+                <Link
+                  href="/about"
+                  className="px-8 py-3 bg-white/90 border-2 border-[#313639] text-[#313639] font-semibold hover:bg-[#313639] hover:text-white hover:border-[#313639] transition-all duration-300"
+                >
+                  {t("aboutUs")}
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-8 py-3 bg-transparent border-2 border-[#D28E45] text-white font-semibold hover:bg-[#D28E45] hover:text-white transition-all duration-300"
+                >
+                  {t("contactUs")}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

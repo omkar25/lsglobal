@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/shared/common/language/LanguageSwitcher";
@@ -18,8 +18,14 @@ const productLinks = [
 
 export function Header() {
   const t = useTranslations();
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/" || pathname === "";
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-[#1A1A1A]">
@@ -40,13 +46,21 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6 ml-auto">
           <Link
             href="/"
-            className="text-sm font-semibold text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45] transition-colors"
+            className={`text-sm font-semibold transition-colors ${
+              isActive("/")
+                ? "text-[#D28E45]"
+                : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+            }`}
           >
             {t("nav.home")}
           </Link>
           <Link
             href="/about"
-            className="text-sm font-semibold text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45] transition-colors"
+            className={`text-sm font-semibold transition-colors ${
+              isActive("/about")
+                ? "text-[#D28E45]"
+                : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+            }`}
           >
             {t("nav.aboutUs")}
           </Link>
@@ -55,7 +69,11 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => setProductsOpen(!productsOpen)}
-              className="flex items-center gap-1 text-sm font-semibold text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45] transition-colors"
+              className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
+                isActive("/products")
+                  ? "text-[#D28E45]"
+                  : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+              }`}
             >
               {t("nav.ourProducts")}
               <ChevronDown
@@ -82,7 +100,11 @@ export function Header() {
 
           <Link
             href="/contact"
-            className="text-sm font-semibold text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45] transition-colors"
+            className={`text-sm font-semibold transition-colors ${
+              isActive("/contact")
+                ? "text-[#D28E45]"
+                : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+            }`}
           >
             {t("nav.contactUs")}
           </Link>
@@ -115,14 +137,22 @@ export function Header() {
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
             <Link
               href="/"
-              className="py-2 text-sm font-semibold text-gray-900 dark:text-white"
+              className={`py-2 text-sm font-semibold ${
+                isActive("/")
+                  ? "text-[#D28E45]"
+                  : "text-gray-900 dark:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.home")}
             </Link>
             <Link
               href="/about"
-              className="py-2 text-sm font-semibold text-gray-900 dark:text-white"
+              className={`py-2 text-sm font-semibold ${
+                isActive("/about")
+                  ? "text-[#D28E45]"
+                  : "text-gray-900 dark:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.aboutUs")}
@@ -157,7 +187,11 @@ export function Header() {
 
             <Link
               href="/contact"
-              className="py-2 text-sm font-semibold text-gray-900 dark:text-white"
+              className={`py-2 text-sm font-semibold ${
+                isActive("/contact")
+                  ? "text-[#D28E45]"
+                  : "text-gray-900 dark:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.contactUs")}
