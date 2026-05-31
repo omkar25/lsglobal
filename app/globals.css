@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* LS Global Theme Colors */
+  --background: #F3F3F3;
+  --foreground: #313639;
+  --card: #FFFFFF;
+  --card-foreground: #313639;
+  --popover: #FFFFFF;
+  --popover-foreground: #313639;
+  --primary: #441C14;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D28E45;
+  --secondary-foreground: #FFFFFF;
+  --tertiary: #313639;
+  --tertiary-foreground: #FFFFFF;
+  --muted: #F3F3F3;
+  --muted-foreground: #6B7280;
+  --accent: #D28E45;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: #441C14;
+  --chart-1: #441C14;
+  --chart-2: #D28E45;
+  --chart-3: #313639;
+  --chart-4: #6B7280;
+  --chart-5: #F3F3F3;
+  --radius: 0;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #313639;
+  --sidebar-primary: #441C14;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #D28E45;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E5E5E5;
+  --sidebar-ring: #441C14;
+}
+
+.dark {
+  /* LS Global Dark Theme */
+  --background: #1A1A1A;
+  --foreground: #F3F3F3;
+  --card: #262626;
+  --card-foreground: #F3F3F3;
+  --popover: #262626;
+  --popover-foreground: #F3F3F3;
+  --primary: #D28E45;
+  --primary-foreground: #1A1A1A;
+  --secondary: #441C14;
+  --secondary-foreground: #F3F3F3;
+  --tertiary: #F3F3F3;
+  --tertiary-foreground: #313639;
+  --muted: #313639;
+  --muted-foreground: #9CA3AF;
+  --accent: #D28E45;
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --border: #404040;
+  --input: #404040;
+  --ring: #D28E45;
+  --chart-1: #D28E45;
+  --chart-2: #441C14;
+  --chart-3: #F3F3F3;
+  --chart-4: #9CA3AF;
+  --chart-5: #313639;
+  --sidebar: #262626;
+  --sidebar-foreground: #F3F3F3;
+  --sidebar-primary: #D28E45;
+  --sidebar-primary-foreground: #1A1A1A;
+  --sidebar-accent: #441C14;
+  --sidebar-accent-foreground: #F3F3F3;
+  --sidebar-border: #404040;
+  --sidebar-ring: #D28E45;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
