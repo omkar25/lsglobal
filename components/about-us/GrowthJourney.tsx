@@ -3,8 +3,24 @@
 import { useTranslations } from "next-intl";
 import { Smile, Globe, Trophy } from "lucide-react";
 
+const businessSolutions = [
+  { icon: "🌍", key: "solution1" },
+  { icon: "🔍", key: "solution2" },
+  { icon: "🏥", key: "solution3" },
+  { icon: "🧤", key: "solution4" },
+  { icon: "🩹", key: "solution5" },
+  { icon: "📦", key: "solution6" },
+  { icon: "📋", key: "solution7" },
+  { icon: "🤝", key: "solution8" },
+  { icon: "🏭", key: "solution9" },
+  { icon: "🌾", key: "solution10" },
+  { icon: "📈", key: "solution11" },
+  { icon: "🌐", key: "solution12" },
+];
+
 export function GrowthJourney() {
   const t = useTranslations("aboutUsPage");
+  const content = useTranslations("aboutUsPage.content");
 
   const stats = [
     {
@@ -25,10 +41,11 @@ export function GrowthJourney() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#F3F3F3]">
+    <>
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <div className="inline-block mb-4">
             <span className="text-sm font-semibold tracking-wider text-[#D28E45]">
               {t("growth.subtitle")}
@@ -67,5 +84,38 @@ export function GrowthJourney() {
         </div>
       </div>
     </section>
+
+    {/* Core Business Solutions */}
+    <section className="py-16 md:py-24 bg-[#F3F3F3]">
+      <div className="container mx-auto px-4">
+        <div className="mb-12">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-semibold tracking-wider text-[#D28E45]">
+              {content("solutionsTitle")}
+            </span>
+            <div className="w-full h-0.5 bg-[#D28E45] mt-2" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {businessSolutions.map((solution) => (
+            <div key={solution.key} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4">
+                <span className="text-2xl">{solution.icon}</span>
+                <div>
+                  <h3 className="font-bold text-[#313639] mb-2">
+                    {content(`solutions.${solution.key}.title`)}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {content(`solutions.${solution.key}.desc`)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    </>
   );
 }
