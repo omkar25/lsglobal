@@ -55,9 +55,9 @@ export function Header() {
             {t("nav.home")}
           </Link>
           <Link
-            href="/about"
+            href="/about-us"
             className={`text-sm font-semibold transition-colors ${
-              isActive("/about")
+              isActive("/about-us")
                 ? "text-[#D28E45]"
                 : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
             }`}
@@ -147,9 +147,9 @@ export function Header() {
               {t("nav.home")}
             </Link>
             <Link
-              href="/about"
+              href="/about-us"
               className={`py-2 text-sm font-semibold ${
-                isActive("/about")
+                isActive("/about-us")
                   ? "text-[#D28E45]"
                   : "text-gray-900 dark:text-white"
               }`}

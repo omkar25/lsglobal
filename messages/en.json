@@ -181,6 +181,196 @@
     "minLength": "Must be at least {min} characters",
     "maxLength": "Must be at most {max} characters"
   },
+  "aboutUsPage": {
+    "hero": {
+      "title": "About Us",
+      "home": "Home",
+      "aboutUs": "About Us"
+    },
+    "committed": {
+      "subtitle": "OUR PROMISE",
+      "title1": "Committed To Global",
+      "title2": "Trade Excellence",
+      "description": "At LS Global Traders, we are dedicated to maintaining the highest standards of quality and integrity. Our commitment ensures every partnership delivers trust, satisfaction, and long-term business success.",
+      "whatWeDo": "What We do",
+      "feature1": "Quality Assurance",
+      "feature2": "Global Reach",
+      "feature3": "Reliable Network",
+      "feature4": "Ethical Practices",
+      "feature5": "Customer Satisfaction",
+      "feature6": "Timely Delivery",
+      "feature7": "Sustainable Growth",
+      "feature8": "Continuous Innovation"
+    },
+    "mission": {
+      "subtitle": "COMPANY GOALS",
+      "title1": "Our",
+      "title2": "Mission",
+      "description1": "At LS Global Traders, our mission is to bridge the gap between international markets and reliable product sourcing. We strive to deliver exceptional quality, ethical practices, and long-term partnerships built on trust and transparency. Our goal is to create lasting value for both our clients and suppliers worldwide.",
+      "description2": "We are committed to supporting industries like medical, chemical, textile, handicrafts, and spices through consistent excellence. Every product we supply undergoes strict quality checks to meet global trade standards. Our approach blends traditional values with modern strategies to ensure seamless international operations.",
+      "description3": "By empowering businesses with dependable sourcing solutions, we aim to strengthen global trade connections. Through innovation, integrity, and commitment, LS Global Traders continues to drive sustainable business growth globally."
+    },
+    "growth": {
+      "subtitle": "KEY ACHIEVEMENTS",
+      "title1": "Global Growth",
+      "title2": "Journey",
+      "stat1Value": "250 +",
+      "stat1Label": "Happy Clients",
+      "stat2Value": "20 +",
+      "stat2Label": "Countries Served",
+      "stat3Value": "10 +",
+      "stat3Label": "Years Experience"
+    },
+    "vision": {
+      "subtitle": "OUR ASPIRATION",
+      "title1": "Our",
+      "title2": "Vision",
+      "description1": "Our vision is to become a globally recognized leader in sourcing and trading, known for our unwavering commitment to quality, innovation, and customer satisfaction.",
+      "description2": "We aspire to create a seamless trading ecosystem where businesses of all sizes can access premium products from around the world with confidence and ease.",
+      "description3": "Through continuous improvement and strategic partnerships, we aim to set new benchmarks in the global trade industry while contributing positively to the communities we serve."
+    },
+    "coreValues": {
+      "subtitle": "WHAT DRIVES US",
+      "title1": "Core",
+      "title2": "Values",
+      "description": "Our core values define who we are and guide every decision we make. They are the foundation of our commitment to excellence in global trade.",
+      "value1Title": "Integrity",
+      "value1Desc": "We conduct business with honesty and transparency, building trust with every interaction.",
+      "value2Title": "Customer Focus",
+      "value2Desc": "Our clients are at the heart of everything we do. We listen, understand, and deliver.",
+      "value3Title": "Excellence",
+      "value3Desc": "We strive for excellence in every product we source and every service we provide.",
+      "value4Title": "Quality First",
+      "value4Desc": "Quality is non-negotiable. We ensure every product meets the highest standards.",
+      "value5Title": "Global Reach",
+      "value5Desc": "Our extensive network spans continents, connecting you to the best suppliers worldwide.",
+      "value6Title": "Innovation",
+      "value6Desc": "We embrace new ideas and technologies to improve our services continuously.",
+      "value7Title": "Reliability",
+      "value7Desc": "Count on us for consistent, dependable service and timely deliveries every time.",
+      "value8Title": "Sustainability",
+      "value8Desc": "We are committed to sustainable practices that benefit our planet and future generations."
+    },
+    "content": {
+      "aboutTitle": "ABOUT LS GLOBAL TRADERS",
+      "aboutTagline": "Connecting Trust, Quality, Innovation & Global Opportunities",
+      "story1": "LS Global Traders is a dynamic and growth-oriented international trading, sourcing, procurement, and supply chain solutions company dedicated to creating sustainable business opportunities and building strong global partnerships.",
+      "story2": "Our story is not merely about business; it is a journey of commitment, service, trust, and continuous growth spanning more than two decades.",
+      "story3": "The foundation of our experience dates back to 1999, when a small initiative was started with a vision to serve communities, support development, and create meaningful impact at the grassroots level. Over the years, this vision expanded through extensive social service activities, organizational leadership, community engagement, procurement coordination, and institutional collaborations.",
+      "story4": "This long-standing journey eventually evolved into a broader mission of connecting businesses, markets, manufacturers, suppliers, distributors, and buyers across regional and international boundaries.",
+      "story5": "Officially established and registered during 2016-17, LS Global Traders combines decades of practical experience with modern business practices, global trade expertise, and customer-focused solutions.",
+      "story6": "Today, we proudly serve as a trusted partner for organizations, institutions, distributors, importers, exporters, wholesalers, procurement agencies, healthcare providers, and businesses seeking reliable sourcing, quality products, and seamless international trade support.",
+      "solutionsTitle": "OUR CORE BUSINESS SOLUTIONS",
+      "solutions": {
+        "solution1": {
+          "title": "International Trade & Export-Import Services",
+          "desc": "Facilitating efficient cross-border trade operations, global market access, export development, import support, and international business expansion."
+        },
+        "solution2": {
+          "title": "Global Sourcing & Strategic Procurement",
+          "desc": "Identifying qualified manufacturers, trusted suppliers, and reliable sourcing channels to meet diverse procurement requirements across multiple industries."
+        },
+        "solution3": {
+          "title": "Medical & Surgical Disposable Products",
+          "desc": "Supplying high-quality medical, surgical, healthcare, hygiene, and disposable products for hospitals, clinics, healthcare distributors, institutional buyers, and government procurement agencies."
+        },
+        "solution4": {
+          "title": "PPE & Workplace Safety Solutions",
+          "desc": "Providing personal protective equipment and workplace safety products that support health, safety, and operational efficiency."
+        },
+        "solution5": {
+          "title": "Cotton & Healthcare Consumables",
+          "desc": "Offering absorbent cotton, surgical cotton, cotton rolls, wound-care essentials, and healthcare consumables that meet industry quality expectations."
+        },
+        "solution6": {
+          "title": "Supply Chain & Logistics Coordination",
+          "desc": "Supporting procurement planning, inventory management, shipment coordination, freight movement, vendor communication, and logistics optimization."
+        },
+        "solution7": {
+          "title": "Export Documentation & Trade Compliance",
+          "desc": "Providing assistance in export documentation, compliance requirements, trade procedures, shipment documentation, and regulatory support."
+        },
+        "solution8": {
+          "title": "B2B Trade Facilitation & Business Networking",
+          "desc": "Connecting manufacturers, suppliers, distributors, wholesalers, institutional buyers, and international trade partners through trusted business relationships."
+        },
+        "solution9": {
+          "title": "Industrial, Consumer & General Merchandise Trading",
+          "desc": "Facilitating sourcing and supply of industrial products, consumer goods, general merchandise, and customized procurement solutions."
+        },
+        "solution10": {
+          "title": "Agricultural & Commodity Trade Support",
+          "desc": "Supporting the sourcing and trading of agricultural commodities and related products for domestic and international markets."
+        },
+        "solution11": {
+          "title": "Vendor Development & Strategic Partnerships",
+          "desc": "Building strong supplier ecosystems, strategic alliances, procurement networks, and sustainable business partnerships."
+        },
+        "solution12": {
+          "title": "Import-Export Consultancy & Market Development",
+          "desc": "Guiding businesses in international trade procedures, export readiness, market expansion strategies, and global business opportunities."
+        }
+      },
+      "industriesTitle": "INDUSTRIES WE SERVE",
+      "industries": {
+        "industry1": "Healthcare & Medical Sector",
+        "industry2": "Manufacturing Industries",
+        "industry3": "Corporate Procurement",
+        "industry4": "Government & Institutional",
+        "industry5": "Agriculture & Commodity",
+        "industry6": "PPE & Safety Distributors",
+        "industry7": "Wholesale & Distribution",
+        "industry8": "International Importers & Exporters",
+        "industry9": "Retail & Commercial"
+      },
+      "advantagesTitle": "OUR COMPETITIVE ADVANTAGES",
+      "advantages": {
+        "advantage1": "More Than 20 Years of Leadership & Field Experience",
+        "advantage2": "Strong Foundation of Social Responsibility",
+        "advantage3": "Registered and Professionally Managed Organization",
+        "advantage4": "Extensive Network of Manufacturers & Suppliers",
+        "advantage5": "Strategic Global Sourcing Capabilities",
+        "advantage6": "End-to-End Procurement Support",
+        "advantage7": "International Trade Expertise",
+        "advantage8": "Supply Chain Optimization Solutions",
+        "advantage9": "Export Excellence & Trade Facilitation",
+        "advantage10": "Vendor Qualification & Development",
+        "advantage11": "Quality Assurance & Product Reliability",
+        "advantage12": "Compliance-Focused Business Operations",
+        "advantage13": "Ethical & Transparent Business Practices",
+        "advantage14": "Customer-Centric Service Approach",
+        "advantage15": "Timely Delivery Commitment",
+        "advantage16": "Sustainable Growth Strategies",
+        "advantage17": "Long-Term Relationship Development",
+        "advantage18": "Global Market Connectivity",
+        "advantage19": "Business Expansion Support",
+        "advantage20": "Reliable Shipment Coordination"
+      },
+      "whyChooseTitle": "WHY CHOOSE LS GLOBAL TRADERS?",
+      "whyChoose": {
+        "intro": "Because successful business is built on more than products.",
+        "trust": "It is built on trust.",
+        "relationships": "It is built on relationships.",
+        "commitment": "It is built on commitment.",
+        "experience": "It is built on experience.",
+        "integrity": "It is built on integrity.",
+        "desc1": "At LS Global Traders, we do not simply move products from one location to another.",
+        "connect": "We connect opportunities.",
+        "build": "We build partnerships.",
+        "strengthen": "We strengthen supply chains.",
+        "support": "We support business growth.",
+        "create": "We create long-term value.",
+        "desc2": "We help organizations navigate global markets with confidence, reliability, and strategic advantage."
+      },
+      "leadershipTitle": "LEADERSHIP PHILOSOPHY",
+      "leadership": {
+        "desc1": "Led by a professional with more than two decades of experience in community development, organizational leadership, procurement coordination, institutional engagement, business networking, and social responsibility initiatives, LS Global Traders combines human values with commercial excellence.",
+        "desc2": "Our leadership believes that business success and social impact can grow together, creating sustainable opportunities for customers, partners, communities, and future generations.",
+        "quote": "Empowering Global Trade Through Trust, Quality, Strategic Sourcing, Innovation & Sustainable Business Growth.",
+        "tagline": "Your Trusted Partner for Global Trade, Procurement Excellence, Supply Chain Solutions & Long-Term Business Success."
+      }
+    }
+  },
   "footer": {
     "phone": "Phone",
     "phoneNumber": "(+91) 9807690693",
