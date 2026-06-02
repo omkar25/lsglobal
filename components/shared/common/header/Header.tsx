@@ -99,9 +99,9 @@ export function Header() {
           </div>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className={`text-sm font-semibold transition-colors ${
-              isActive("/contact")
+              isActive("/contact-us")
                 ? "text-[#D28E45]"
                 : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
             }`}
@@ -186,9 +186,9 @@ export function Header() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact-us"
               className={`py-2 text-sm font-semibold ${
-                isActive("/contact")
+                isActive("/contact-us")
                   ? "text-[#D28E45]"
                   : "text-gray-900 dark:text-white"
               }`}

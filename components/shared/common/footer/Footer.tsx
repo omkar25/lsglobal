@@ -7,9 +7,9 @@ import { Phone, MapPin, Mail } from "lucide-react";
 
 const siteLinks = [
   { href: "/", key: "nav.home" },
-  { href: "/about", key: "nav.aboutUs" },
+  { href: "/about-us", key: "nav.aboutUs" },
   { href: "/products", key: "nav.ourProducts" },
-  { href: "/contact", key: "nav.contactUs" },
+  { href: "/contact-us", key: "nav.contactUs" },
 ] as const;
 
 const productLinks = [

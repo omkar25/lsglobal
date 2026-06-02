@@ -389,5 +389,74 @@
     "craftedWith": "Crafted with",
     "by": "by",
     "developerName": "Alok Chaurasiya"
+  },
+  "contactUsPage": {
+    "hero": {
+      "title": "Contact Us",
+      "contactUs": "Contact Us"
+    },
+    "map": {
+      "subtitle": "FIND US",
+      "title1": "Our",
+      "title2": "Location",
+      "tooltip": {
+        "title": "LS Global Traders",
+        "address": "Bazar Khas Nagar Panchayat, Jiyanpur Sagri Pin.276140, Azamgarh, Uttar Pradesh, India"
+      },
+      "getDirections": "Get Directions"
+    },
+    "communication": {
+      "subtitle": "GLOBAL COMMUNICATION",
+      "title1": "Connecting You Across",
+      "title2": "Borders",
+      "description1": "At LS Global Traders, we value strong communication and seamless coordination with our global partners. Whether you are a buyer, supplier, or business collaborator, our dedicated team ensures quick responses and transparent dealings at every stage. We believe that effective communication builds lasting trust and successful business relationships.",
+      "description2": "Reach out to us for inquiries, partnerships, or support — our global network ensures your message is heard and your needs are addressed promptly.",
+      "callSupport": {
+        "title": "Call Support",
+        "description": "We are available to assist you with any queries or product requirements over the phone. Our professional support team ensures that every call receives quick attention and clear guidance for smooth business coordination."
+      },
+      "emailAssistance": {
+        "title": "Email Assistance",
+        "description": "Get detailed information, quotations, and support through our official email channel. We prioritize fast replies, ensuring your requests and communication are handled with professionalism and clarity at all times."
+      },
+      "officeLocation": {
+        "title": "Office Location",
+        "description": "Visit our office to discuss business opportunities and partnerships in person. Our modern workspace is designed to welcome clients, ensuring a comfortable environment for effective communication and collaboration."
+      }
+    },
+    "info": {
+      "phone": {
+        "title": "Phone",
+        "content": "(+91) 9807690693"
+      },
+      "email": {
+        "title": "E-Mail",
+        "content": "info@lsglobaltraders.com"
+      },
+      "address": {
+        "title": "Address",
+        "content": "Bazar Khas Nagar Panchayat, Jiyanpur Sagri Pin.276140, Azamgarh, Uttar Pradesh."
+      },
+      "hours": {
+        "title": "Business Hours",
+        "content": "Mon - Fri: 09:00 - 18:00\nSat: By Appointment"
+      }
+    },
+    "form": {
+      "subtitle": "CONTACT US",
+      "title": "Drop us a line",
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+91...",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Describe your inquiry...",
+      "submit": "SEND MESSAGE",
+      "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+      "error": "Something went wrong. Please try again later."
+    }
   }
 }
