@@ -8,11 +8,11 @@ export function HeroBanner() {
   const t = useTranslations("aboutUsPage");
 
   return (
-    <section className="relative py-16 md:py-20">
+    <section className="relative py-26 md:py-36 lg:py-50">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/about-us/about-us-1.png"
+          src="/images/lsg_globla_about-us.jpeg"
           alt="About Us Background"
           fill
           sizes="100vw"

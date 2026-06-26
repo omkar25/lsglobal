@@ -1,7 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+const missionPointKeys = ["point1", "point2", "point3", "point4", "point5"] as const;
+
+const serviceKeys = [
+  "service1", "service2", "service3", "service4", "service5", "service6",
+  "service7", "service8", "service9", "service10", "service11", "service12"
+] as const;
 
 export function MissionSection() {
   const t = useTranslations("aboutUsPage");
@@ -58,31 +66,54 @@ export function MissionSection() {
 
             {/* Right Content */}
             <div className="space-y-6">
-              {/* Subtitle */}
-              <div className="inline-block">
-                <span className="text-sm font-semibold tracking-wider text-[#D28E45]">
-                  {t("mission.subtitle")}
-                </span>
-                <div className="w-full h-0.5 bg-[#D28E45] mt-2" />
-              </div>
-
               {/* Title */}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                {t("mission.title1")}{" "}
-                <span className="italic text-[#D28E45]">{t("mission.title2")}</span>
-              </h2>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  {t("missionNew.title")}
+                </h2>
+                <div className="w-16 h-1 bg-[#D28E45]" />
+              </div>
 
               {/* Description */}
               <p className="text-gray-300 leading-relaxed">
-                {t("mission.description1")}
+                {t("missionNew.description")}
               </p>
-              <p className="text-gray-300 leading-relaxed">
-                {t("mission.description2")}
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                {t("mission.description3")}
-              </p>
+
+              {/* Mission Points */}
+              <div className="space-y-3">
+                {missionPointKeys.map((key) => (
+                  <div key={key} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-[#D28E45] shrink-0" />
+                    <span className="text-white">{t(`missionNew.${key}`)}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#313639] mb-2">
+              {t("coreServices.title")}
+            </h2>
+            <div className="w-24 h-1 bg-[#D28E45] mx-auto" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {serviceKeys.map((key) => (
+              <div
+                key={key}
+                className="bg-[#F3F3F3] p-4 rounded-lg text-center hover:bg-[#313639] hover:text-white transition-colors group"
+              >
+                <p className="text-sm font-medium text-[#313639] group-hover:text-white">
+                  {t(`coreServices.${key}`)}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
