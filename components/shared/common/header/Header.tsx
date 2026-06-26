@@ -16,11 +16,20 @@ const productLinks = [
   { href: "/products/spices", key: "spices" },
 ] as const;
 
+const serviceLinks = [
+  { href: "/industries-we-serve", key: "industries" },
+  { href: "/products-we-source", key: "productsWeSource" },
+  { href: "/become-a-buyer", key: "becomeBuyer" },
+  { href: "/become-a-supplier", key: "becomeSupplier" },
+  { href: "/request-quotation", key: "rfq" },
+] as const;
+
 export function Header() {
   const t = useTranslations();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/" || pathname === "";
@@ -91,6 +100,39 @@ export function Header() {
                       onClick={() => setProductsOpen(false)}
                     >
                       {t(`nav.products.${link.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Services Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
+                isActive("/industries") || isActive("/products-we-source") || isActive("/become-a") || isActive("/request-quotation")
+                  ? "text-[#D28E45]"
+                  : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+              }`}
+            >
+              {t("nav.servicesMenu")}
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-72 rounded-md border bg-white shadow-lg dark:bg-zinc-900 dark:border-zinc-800">
+                <div className="py-2">
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.key}
+                      href={link.href}
+                      className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      {t(`nav.services.${link.key}`)}
                     </Link>
                   ))}
                 </div>
@@ -179,6 +221,33 @@ export function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {t(`nav.products.${link.key}`)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Services Submenu */}
+            <div>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="flex items-center justify-between w-full py-2 text-sm font-semibold text-gray-900 dark:text-white"
+              >
+                {t("nav.servicesMenu")}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {servicesOpen && (
+                <div className="pl-4 flex flex-col gap-1">
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.key}
+                      href={link.href}
+                      className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {t(`nav.services.${link.key}`)}
                     </Link>
                   ))}
                 </div>

@@ -10,6 +10,7 @@
     "home": "Home",
     "aboutUs": "About Us",
     "ourProducts": "Our Products",
+    "servicesMenu": "Services",
     "contactUs": "Contact Us",
     "products": {
       "chemicals": "Chemicals Industry",
@@ -17,6 +18,13 @@
       "homeTextiles": "Home Textiles Industry",
       "medicalEquipment": "Medical & Surgical Equipment Industry",
       "spices": "Spices Industry"
+    },
+    "services": {
+      "industries": "Industries We Serve",
+      "productsWeSource": "Products We Source",
+      "becomeBuyer": "Become a Buyer",
+      "becomeSupplier": "Become a Supplier",
+      "rfq": "Request Quotation"
     }
   },
   "home": {
@@ -554,6 +562,367 @@
       "submit": "SEND MESSAGE",
       "success": "Thank you! Your message has been sent successfully. We'll get back to you soon.",
       "error": "Something went wrong. Please try again later."
+    }
+  },
+  "rfqPage": {
+    "hero": {
+      "title": "Request for Quotation",
+      "subtitle": "Submit your sourcing requirements and get competitive quotes from verified suppliers"
+    },
+    "tabs": {
+      "buyer": "I'm a Buyer",
+      "supplier": "I'm a Supplier"
+    },
+    "buyerForm": {
+      "title": "Buyer RFQ Form",
+      "description": "Tell us what you need and we'll connect you with the right suppliers",
+      "productName": "Product Name",
+      "productNamePlaceholder": "e.g., Basmati Rice, Cotton Fabric",
+      "quantity": "Quantity Required",
+      "quantityPlaceholder": "e.g., 1000 kg, 500 units",
+      "destinationCountry": "Destination Country",
+      "destinationCountryPlaceholder": "e.g., UAE, USA, UK",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "whatsapp": "WhatsApp Number",
+      "whatsappPlaceholder": "+971...",
+      "additionalDetails": "Additional Details",
+      "additionalDetailsPlaceholder": "Specifications, quality requirements, delivery timeline...",
+      "submit": "Submit RFQ",
+      "success": "Your RFQ has been submitted successfully! We'll get back to you within 24-48 hours.",
+      "error": "Failed to submit. Please try again.",
+      "errors": {
+        "productRequired": "Product name is required",
+        "quantityRequired": "Quantity is required",
+        "countryRequired": "Destination country is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "whatsappRequired": "WhatsApp number is required"
+      }
+    },
+    "supplierForm": {
+      "title": "Supplier Registration Form",
+      "description": "Register as a supplier and get access to international buyers",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company name",
+      "contactPerson": "Contact Person",
+      "contactPersonPlaceholder": "Full name",
+      "productName": "Products You Manufacture",
+      "productNamePlaceholder": "e.g., Spices, Textiles, Medical Equipment",
+      "productionCapacity": "Production Capacity",
+      "productionCapacityPlaceholder": "e.g., 10,000 units/month",
+      "certifications": "Certifications",
+      "certificationsPlaceholder": "e.g., ISO, FSSAI, CE Mark",
+      "country": "Country",
+      "countryPlaceholder": "Your country",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+91...",
+      "additionalDetails": "Additional Details",
+      "additionalDetailsPlaceholder": "Tell us more about your company and products...",
+      "submit": "Register as Supplier",
+      "success": "Registration submitted successfully! Our team will contact you soon.",
+      "error": "Failed to submit. Please try again.",
+      "errors": {
+        "companyRequired": "Company name is required",
+        "contactRequired": "Contact person is required",
+        "productRequired": "Product name is required",
+        "capacityRequired": "Production capacity is required",
+        "countryRequired": "Country is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "phoneRequired": "Phone number is required"
+      }
+    }
+  },
+  "becomeBuyerPage": {
+    "hero": {
+      "title": "Become a Buyer",
+      "subtitle": "Source quality products from verified Indian manufacturers and suppliers"
+    },
+    "benefits": {
+      "title": "Why Source Through Us?",
+      "benefit1": {
+        "title": "Global Sourcing Network",
+        "description": "Access to verified manufacturers across India"
+      },
+      "benefit2": {
+        "title": "Quality Assurance",
+        "description": "Pre-shipment inspection and quality control"
+      },
+      "benefit3": {
+        "title": "Logistics Support",
+        "description": "End-to-end shipping and documentation"
+      },
+      "benefit4": {
+        "title": "Competitive Pricing",
+        "description": "Direct factory pricing without middlemen"
+      },
+      "benefit5": {
+        "title": "Dedicated Support",
+        "description": "Personal account manager for your orders"
+      },
+      "benefit6": {
+        "title": "Flexible MOQ",
+        "description": "Customized minimum order quantities"
+      }
+    },
+    "form": {
+      "title": "Submit Your Sourcing Request",
+      "description": "Tell us what you're looking for and we'll find the best suppliers for you",
+      "productName": "Product Name",
+      "productNamePlaceholder": "What product are you looking for?",
+      "quantity": "Quantity Required",
+      "quantityPlaceholder": "e.g., 1000 kg, 500 units",
+      "destinationCountry": "Destination Country",
+      "destinationCountryPlaceholder": "Where should we ship?",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "whatsapp": "WhatsApp Number",
+      "whatsappPlaceholder": "+971...",
+      "additionalDetails": "Additional Requirements",
+      "additionalDetailsPlaceholder": "Specifications, certifications needed, timeline...",
+      "submit": "Submit Request",
+      "success": "Request submitted! We'll contact you within 24-48 hours.",
+      "error": "Failed to submit. Please try again.",
+      "errors": {
+        "productRequired": "Product name is required",
+        "quantityRequired": "Quantity is required",
+        "countryRequired": "Destination country is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "whatsappRequired": "WhatsApp number is required"
+      }
+    }
+  },
+  "becomeSupplierPage": {
+    "hero": {
+      "title": "Become a Supplier",
+      "subtitle": "Partner with us to reach international buyers and grow your export business"
+    },
+    "benefits": {
+      "title": "Why Partner With Us?",
+      "benefit1": {
+        "title": "Global Market Access",
+        "description": "Connect with buyers from Middle East, Africa, Europe & more"
+      },
+      "benefit2": {
+        "title": "Long-term Partnerships",
+        "description": "Build sustainable business relationships"
+      },
+      "benefit3": {
+        "title": "Business Growth",
+        "description": "Expand your export capabilities"
+      },
+      "benefit4": {
+        "title": "Buyer Network",
+        "description": "Access to our verified buyer database"
+      },
+      "benefit5": {
+        "title": "Export Support",
+        "description": "Documentation and compliance assistance"
+      },
+      "benefit6": {
+        "title": "Professional Representation",
+        "description": "We represent your products professionally"
+      }
+    },
+    "form": {
+      "title": "Register as a Supplier",
+      "description": "Fill in your details and our team will contact you",
+      "companyName": "Company Name",
+      "companyNamePlaceholder": "Your company name",
+      "contactPerson": "Contact Person",
+      "contactPersonPlaceholder": "Full name",
+      "productName": "Products You Manufacture",
+      "productNamePlaceholder": "e.g., Spices, Textiles, Medical Equipment",
+      "productionCapacity": "Production Capacity",
+      "productionCapacityPlaceholder": "e.g., 10,000 units/month",
+      "certifications": "Certifications (Optional)",
+      "certificationsPlaceholder": "e.g., ISO, FSSAI, CE Mark",
+      "country": "Country",
+      "countryPlaceholder": "Your country",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+91...",
+      "additionalDetails": "About Your Company",
+      "additionalDetailsPlaceholder": "Tell us about your company, products, and export experience...",
+      "submit": "Register Now",
+      "success": "Registration submitted! Our team will contact you soon.",
+      "error": "Failed to submit. Please try again.",
+      "errors": {
+        "companyRequired": "Company name is required",
+        "contactRequired": "Contact person is required",
+        "productRequired": "Product name is required",
+        "capacityRequired": "Production capacity is required",
+        "countryRequired": "Country is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "phoneRequired": "Phone number is required"
+      }
+    }
+  },
+  "industriesPage": {
+    "hero": {
+      "title": "Industries We Serve",
+      "subtitle": "Comprehensive sourcing solutions across diverse industry sectors"
+    },
+    "industries": {
+      "agriculture": {
+        "title": "Agriculture Products",
+        "description": "Farm fresh produce and agricultural commodities",
+        "item1": "Grains & Cereals",
+        "item2": "Pulses & Lentils",
+        "item3": "Oilseeds"
+      },
+      "foodFmcg": {
+        "title": "Food & FMCG",
+        "description": "Processed foods and consumer goods",
+        "item1": "Packaged Foods",
+        "item2": "Beverages",
+        "item3": "Snacks"
+      },
+      "spices": {
+        "title": "Spices & Herbs",
+        "description": "Premium quality Indian spices",
+        "item1": "Whole Spices",
+        "item2": "Ground Spices",
+        "item3": "Spice Blends"
+      },
+      "medical": {
+        "title": "Medical & Surgical",
+        "description": "Healthcare and medical equipment",
+        "item1": "Surgical Instruments",
+        "item2": "Disposables",
+        "item3": "Hospital Supplies"
+      },
+      "pharmaceutical": {
+        "title": "Pharmaceutical",
+        "description": "Medicines and pharma products",
+        "item1": "Generic Medicines",
+        "item2": "APIs",
+        "item3": "Formulations"
+      },
+      "industrial": {
+        "title": "Industrial Products",
+        "description": "Industrial supplies and materials",
+        "item1": "Raw Materials",
+        "item2": "Chemicals",
+        "item3": "Industrial Goods"
+      },
+      "engineering": {
+        "title": "Engineering Goods",
+        "description": "Machinery and engineering products",
+        "item1": "Machine Parts",
+        "item2": "Tools",
+        "item3": "Equipment"
+      },
+      "handicrafts": {
+        "title": "Handicrafts & Decor",
+        "description": "Artisan crafts and home decor",
+        "item1": "Home Decor",
+        "item2": "Art Pieces",
+        "item3": "Gift Items"
+      },
+      "textiles": {
+        "title": "Textiles & Garments",
+        "description": "Fabrics and ready-made garments",
+        "item1": "Cotton Fabrics",
+        "item2": "Ready Garments",
+        "item3": "Home Textiles"
+      },
+      "packaging": {
+        "title": "Packaging Materials",
+        "description": "Packaging solutions for all industries",
+        "item1": "Corrugated Boxes",
+        "item2": "Flexible Packaging",
+        "item3": "Labels"
+      },
+      "construction": {
+        "title": "Construction Materials",
+        "description": "Building and construction supplies",
+        "item1": "Tiles & Stones",
+        "item2": "Sanitaryware",
+        "item3": "Hardware"
+      },
+      "consumer": {
+        "title": "Consumer Products",
+        "description": "Daily use consumer goods",
+        "item1": "Personal Care",
+        "item2": "Household Items",
+        "item3": "Electronics"
+      },
+      "privateLabel": {
+        "title": "Private Label",
+        "description": "Custom branding and private label products",
+        "item1": "Custom Packaging",
+        "item2": "Brand Development",
+        "item3": "OEM Products"
+      },
+      "customManufacturing": {
+        "title": "Custom Manufacturing",
+        "description": "Made-to-order manufacturing solutions",
+        "item1": "Custom Products",
+        "item2": "Prototyping",
+        "item3": "Bulk Orders"
+      }
+    },
+    "cta": {
+      "title": "Need Products from Any Industry?",
+      "description": "Submit your requirements and we'll source the best products for you",
+      "button": "Request Quotation"
+    }
+  },
+  "productsPage": {
+    "hero": {
+      "title": "Products We Source",
+      "subtitle": "Wide range of quality products sourced from verified Indian manufacturers"
+    },
+    "categories": {
+      "title": "Product Categories",
+      "description": "We source products across multiple categories to meet your business needs",
+      "grains": "Grains & Cereals",
+      "spices": "Spices & Seasonings",
+      "herbs": "Herbs & Botanicals",
+      "fruits": "Fruits & Vegetables",
+      "seafood": "Seafood Products",
+      "dairy": "Dairy Products",
+      "snacks": "Snacks & Namkeen",
+      "confectionery": "Confectionery",
+      "pharma": "Pharmaceuticals",
+      "medical": "Medical Supplies",
+      "textiles": "Textiles & Fabrics",
+      "jewelry": "Jewelry & Accessories",
+      "handicrafts": "Handicrafts",
+      "furniture": "Furniture & Decor",
+      "tools": "Tools & Hardware",
+      "machinery": "Machinery & Parts"
+    },
+    "process": {
+      "title": "Our Sourcing Process",
+      "step1": {
+        "title": "Requirement Analysis",
+        "description": "We understand your exact product specifications"
+      },
+      "step2": {
+        "title": "Supplier Matching",
+        "description": "We identify the best suppliers for your needs"
+      },
+      "step3": {
+        "title": "Quality Check",
+        "description": "Pre-shipment inspection ensures quality"
+      },
+      "step4": {
+        "title": "Delivery",
+        "description": "Seamless logistics to your destination"
+      }
+    },
+    "cta": {
+      "title": "Can't Find What You Need?",
+      "description": "We can source almost any product from India. Tell us your requirements.",
+      "button": "Submit Your Request"
     }
   }
 }
