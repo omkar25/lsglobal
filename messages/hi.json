@@ -875,6 +875,16 @@
       "button": "कोटेशन का अनुरोध करें"
     }
   },
+  "chatbot": {
+    "title": "LS Global सहायक",
+    "subtitle": "ऑनलाइन | मदद के लिए तैयार",
+    "welcomeTitle": "नमस्ते! 👋",
+    "welcomeText": "उत्पादों, सोर्सिंग या निर्यात में मदद चाहिए? हमसे चैट करें!",
+    "startChat": "चैट शुरू करें",
+    "placeholder": "अपना संदेश लिखें...",
+    "poweredBy": "LS Global Traders द्वारा संचालित",
+    "error": "क्षमा करें, आपका अनुरोध संसाधित नहीं हो सका। कृपया पुनः प्रयास करें या info@lsglobaltraders.com पर संपर्क करें"
+  },
   "productsPage": {
     "hero": {
       "title": "हम जो उत्पाद सोर्स करते हैं",

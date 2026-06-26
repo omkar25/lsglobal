@@ -875,6 +875,16 @@
       "button": "Request Quotation"
     }
   },
+  "chatbot": {
+    "title": "LS Global Assistant",
+    "subtitle": "Online | Ready to help",
+    "welcomeTitle": "Hi there! 👋",
+    "welcomeText": "Need help with products, sourcing, or exports? Chat with us!",
+    "startChat": "Start Chat",
+    "placeholder": "Type your message...",
+    "poweredBy": "Powered by LS Global Traders",
+    "error": "Sorry, I couldn't process your request. Please try again or contact us directly at info@lsglobaltraders.com"
+  },
   "productsPage": {
     "hero": {
       "title": "Products We Source",

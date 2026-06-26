@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/shared/common/header/Header";
 import { Footer } from "@/components/shared/common/footer/Footer";
 import { FloatingButtons } from "@/components/shared/common/floatingbuttons/FloatingButtons";
+import { Chatbot } from "@/components/chatbot/Chatbot";
 import "../globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -45,6 +46,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <main className="flex-1">{children}</main>
           <Footer />
           <FloatingButtons />
+          <Chatbot />
         </NextIntlClientProvider>
       </body>
     </html>
