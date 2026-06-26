@@ -46,7 +46,7 @@ export function HeroCarousel() {
   const isLeft = slide.position === "left";
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
       {/* Background Image */}
       {slides.map((s, index) => (
         <div
@@ -73,15 +73,15 @@ export function HeroCarousel() {
         <div className="container mx-auto px-4">
           <div
             key={animationKey}
-            className={`max-w-2xl ${
+            className={`max-w-2xl px-2 sm:px-0 ${
               isLeft
-                ? "mr-auto ml-8 md:ml-16 lg:ml-24 text-left"
-                : "ml-auto mr-8 md:mr-16 lg:mr-24 text-right"
+                ? "mr-auto sm:ml-4 md:ml-16 lg:ml-24 text-left"
+                : "ml-auto sm:mr-4 md:mr-16 lg:mr-24 text-right"
             }`}
           >
             {/* Accent Line */}
             <div
-              className={`w-16 h-1 bg-[#D28E45] mb-6 animate-fade-in-up ${
+              className={`w-12 sm:w-16 h-1 bg-[#D28E45] mb-4 sm:mb-6 animate-fade-in-up ${
                 isLeft ? "mr-auto" : "ml-auto"
               }`}
               style={{ animationDelay: "0ms", animationFillMode: "both" }}
@@ -94,7 +94,7 @@ export function HeroCarousel() {
               animateBy="words"
               direction="top"
               onAnimationComplete={() => setShowDescription(true)}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg"
             />
 
             {/* Description with BlurText */}
@@ -105,26 +105,26 @@ export function HeroCarousel() {
                 animateBy="words"
                 direction="top"
                 onAnimationComplete={() => setShowButtons(true)}
-                className="text-base md:text-lg text-gray-100 mb-8 leading-relaxed drop-shadow-md"
+                className="text-sm sm:text-base md:text-lg text-gray-100 mb-5 sm:mb-8 leading-relaxed drop-shadow-md line-clamp-3 sm:line-clamp-none"
               />
             )}
 
             {/* Buttons */}
             {showButtons && (
               <div
-                className={`flex gap-4 animate-fade-in-up ${
-                  isLeft ? "justify-start" : "justify-end"
+                className={`flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up ${
+                  isLeft ? "items-start sm:justify-start" : "items-end sm:justify-end"
                 }`}
               >
                 <Link
                   href="/about"
-                  className="px-8 py-3 bg-white/90 border-2 border-[#313639] text-[#313639] font-semibold hover:bg-[#313639] hover:text-white hover:border-[#313639] transition-all duration-300"
+                  className="px-5 sm:px-8 py-2.5 sm:py-3 bg-white/90 border-2 border-[#313639] text-[#313639] text-sm sm:text-base font-semibold hover:bg-[#313639] hover:text-white hover:border-[#313639] transition-all duration-300"
                 >
                   {t("aboutUs")}
                 </Link>
                 <Link
                   href="/contact"
-                  className="px-8 py-3 bg-transparent border-2 border-[#D28E45] text-white font-semibold hover:bg-[#D28E45] hover:text-white transition-all duration-300"
+                  className="px-5 sm:px-8 py-2.5 sm:py-3 bg-transparent border-2 border-[#D28E45] text-white text-sm sm:text-base font-semibold hover:bg-[#D28E45] hover:text-white transition-all duration-300"
                 >
                   {t("contactUs")}
                 </Link>
@@ -135,30 +135,30 @@ export function HeroCarousel() {
       </div>
 
       {/* Navigation Arrows */}
-      <div className="absolute bottom-8 left-4 flex">
+      <div className="absolute bottom-4 sm:bottom-8 left-2 sm:left-4 flex">
         <button
           onClick={prevSlide}
-          className="w-12 h-12 bg-white/90 hover:bg-white flex items-center justify-center transition-colors"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 hover:bg-white flex items-center justify-center transition-colors"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-[#313639]" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#313639]" />
         </button>
         <button
           onClick={nextSlide}
-          className="w-12 h-12 bg-[#D28E45] hover:bg-[#C07D35] flex items-center justify-center transition-colors"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-[#D28E45] hover:bg-[#C07D35] flex items-center justify-center transition-colors"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </button>
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? "bg-[#D28E45] scale-125"
                 : "bg-white/60 hover:bg-white/80"

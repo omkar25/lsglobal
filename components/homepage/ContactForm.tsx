@@ -93,7 +93,7 @@ export function ContactForm() {
   };
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px]">
+    <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -106,19 +106,19 @@ export function ContactForm() {
       </div>
 
       {/* Form Container */}
-      <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-md">
-          <div className="bg-[#313639] p-8 md:p-10">
+      <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-24">
+        <div className="max-w-md mx-auto sm:mx-0">
+          <div className="bg-[#313639] p-5 sm:p-8 md:p-10 rounded-lg sm:rounded-none">
             {/* Header */}
-            <p className="text-sm font-semibold tracking-wider text-[#D28E45] mb-2">
+            <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#D28E45] mb-1.5 sm:mb-2">
               {t("subtitle")}
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-5 sm:mb-8">
               {t("title")}
             </h2>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Name */}
               <div>
                 <input
@@ -127,15 +127,15 @@ export function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t("name")}
-                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 focus:outline-none focus:border-[#D28E45] transition-colors"
+                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 text-sm sm:text-base focus:outline-none focus:border-[#D28E45] transition-colors"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>
                 )}
               </div>
 
               {/* Email & Phone */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <input
                     type="email"
@@ -143,10 +143,10 @@ export function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder={t("email")}
-                    className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 focus:outline-none focus:border-[#D28E45] transition-colors"
+                    className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 text-sm sm:text-base focus:outline-none focus:border-[#D28E45] transition-colors"
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
                   )}
                 </div>
                 <div>
@@ -156,10 +156,10 @@ export function ContactForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder={t("phone")}
-                    className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 focus:outline-none focus:border-[#D28E45] transition-colors"
+                    className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 text-sm sm:text-base focus:outline-none focus:border-[#D28E45] transition-colors"
                   />
                   {errors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                    <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
                   )}
                 </div>
               </div>
@@ -172,7 +172,7 @@ export function ContactForm() {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder={t("subject")}
-                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 focus:outline-none focus:border-[#D28E45] transition-colors"
+                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 text-sm sm:text-base focus:outline-none focus:border-[#D28E45] transition-colors"
                 />
               </div>
 
@@ -183,8 +183,8 @@ export function ContactForm() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder={t("message")}
-                  rows={4}
-                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 focus:outline-none focus:border-[#D28E45] transition-colors resize-none"
+                  rows={3}
+                  className="w-full bg-transparent border-b border-gray-500 text-white placeholder-gray-400 py-2 text-sm sm:text-base focus:outline-none focus:border-[#D28E45] transition-colors resize-none"
                 />
               </div>
 
@@ -192,20 +192,20 @@ export function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 bg-[#D28E45] text-white font-semibold hover:bg-[#C07D35] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-2.5 sm:py-3 bg-[#D28E45] text-white text-sm sm:text-base font-semibold hover:bg-[#C07D35] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "..." : t("submit")}
               </button>
 
               {/* Status Messages */}
               {submitStatus === "error" && (
-                <div className="border-2 border-[#D28E45] p-4">
-                  <p className="text-gray-400 text-sm">{t("error")}</p>
+                <div className="border-2 border-[#D28E45] p-3 sm:p-4">
+                  <p className="text-gray-400 text-xs sm:text-sm">{t("error")}</p>
                 </div>
               )}
               {submitStatus === "success" && (
-                <div className="bg-green-900/50 p-4 rounded">
-                  <p className="text-green-300 text-sm">{t("success")}</p>
+                <div className="bg-green-900/50 p-3 sm:p-4 rounded">
+                  <p className="text-green-300 text-xs sm:text-sm">{t("success")}</p>
                 </div>
               )}
             </form>
