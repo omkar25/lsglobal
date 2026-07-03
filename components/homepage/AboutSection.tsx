@@ -36,9 +36,9 @@ export function AboutSection() {
             {/* Stats */}
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 pt-2 sm:pt-4">
               {/* Global Clients */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#D28E45] flex items-center justify-center shrink-0">
-                  <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-[#D28E45]" />
+              <div className="flex items-center gap-3 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#D28E45] flex items-center justify-center shrink-0 group-hover:bg-[#D28E45] transition-colors duration-300">
+                  <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-[#D28E45] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <p className="text-xl sm:text-2xl font-bold italic text-[#313639]">
@@ -49,9 +49,9 @@ export function AboutSection() {
               </div>
 
               {/* Years Experience */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#D28E45] flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#D28E45]" />
+              <div className="flex items-center gap-3 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#D28E45] flex items-center justify-center shrink-0 group-hover:bg-[#D28E45] transition-colors duration-300">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#D28E45] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <p className="text-xl sm:text-2xl font-bold italic text-[#313639]">
@@ -67,13 +67,13 @@ export function AboutSection() {
           <div className="relative order-first lg:order-last">
             <div className="relative">
               {/* Main Image */}
-              <div className="relative w-full aspect-square max-w-sm sm:max-w-md mx-auto lg:ml-auto">
+              <div className="relative w-full aspect-square max-w-sm sm:max-w-md mx-auto lg:ml-auto overflow-hidden group shadow-xl">
                 <Image
                   src="/images/Home_About.webp"
                   alt="About LS Global"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               {/* Decorative border - hidden on mobile */}

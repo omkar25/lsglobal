@@ -37,7 +37,7 @@ export function ImageText() {
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-2 sm:pt-4">
               {/* Global Reach */}
-              <div className="space-y-2">
+              <div className="space-y-2 p-4 -m-4 sm:m-0 sm:p-5 border border-transparent sm:border-gray-100 sm:hover:border-[#D28E45]/40 sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300 bg-white">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-[#D28E45]" />
                   <h3 className="font-bold text-[#313639] text-sm tracking-wide">
@@ -50,7 +50,7 @@ export function ImageText() {
               </div>
 
               {/* Trusted Partnership */}
-              <div className="space-y-2">
+              <div className="space-y-2 p-4 -m-4 sm:m-0 sm:p-5 border border-transparent sm:border-gray-100 sm:hover:border-[#D28E45]/40 sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300 bg-white">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-[#D28E45]" />
                   <h3 className="font-bold text-[#313639] text-sm tracking-wide">
@@ -66,17 +66,19 @@ export function ImageText() {
 
           {/* Right Image */}
           <div className="relative order-first lg:order-last">
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <div className="relative aspect-[4/3] w-full overflow-hidden group shadow-xl">
               <Image
                 src="/images/Home-Welcome.webp"
                 alt="Home Welcome"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               {/* Decorative border - hidden on mobile */}
               <div className="hidden sm:block absolute -top-4 -right-4 w-full h-full border-2 border-[#D28E45] -z-10" />
             </div>
+            {/* Floating accent square */}
+            <div className="hidden sm:block absolute -bottom-5 -left-5 w-20 h-20 bg-[#D28E45] -z-10" />
           </div>
         </div>
       </div>

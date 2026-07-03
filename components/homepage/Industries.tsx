@@ -9,27 +9,27 @@ const industries = [
   {
     key: "handicrafts",
     image: "/images/industries/Handicraft-Industry.webp",
-    href: "/products/handicrafts",
+    href: "/c/handicrafts-industry",
   },
   {
     key: "homeTextiles",
     image: "/images/industries/Home-Textile-Industry.webp",
-    href: "/products/home-textiles",
+    href: "/c/home-textiles-industry",
   },
   {
     key: "chemicals",
     image: "/images/industries/Chemicals-Industry.webp",
-    href: "/products/chemicals",
+    href: "/c/chemicals-industry",
   },
   {
     key: "medicalEquipment",
     image: "/images/industries/Medical-Surgical-Equipment-Industry.webp",
-    href: "/products/medical-equipment",
+    href: "/c/medical-surgical-equipment-industry",
   },
   {
     key: "spices",
     image: "/images/industries/Spices-Parts-Industry.webp",
-    href: "/products/spices",
+    href: "/c/spices-industry",
   },
 ];
 
@@ -61,7 +61,7 @@ export function Industries() {
           {industries.map((industry) => (
             <div
               key={industry.key}
-              className="bg-[#D28E45] rounded-xl sm:rounded-2xl overflow-hidden flex flex-col"
+              className="bg-[#D28E45] rounded-xl sm:rounded-2xl overflow-hidden flex flex-col group shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
             >
               {/* Image */}
               <div className="p-2 sm:p-3">
@@ -71,7 +71,7 @@ export function Industries() {
                     alt={t(`${industry.key}.title`)}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export function Industries() {
                 </p>
                 <Link
                   href={industry.href}
-                  className="inline-block mx-auto px-3 sm:px-6 py-1.5 sm:py-2 bg-[#313639] text-white text-xs sm:text-sm font-semibold hover:bg-[#1a1a1a] transition-colors"
+                  className="inline-block mx-auto px-3 sm:px-6 py-1.5 sm:py-2 bg-[#313639] text-white text-xs sm:text-sm font-semibold hover:bg-white hover:text-[#313639] transition-colors duration-300"
                 >
                   {t("knowMore")}
                 </Link>
@@ -99,9 +99,9 @@ export function Industries() {
         <div className="text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#313639] text-white text-sm sm:text-base font-semibold hover:bg-[#1a1a1a] transition-colors"
+            className="group inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#313639] text-white text-sm sm:text-base font-semibold hover:bg-[#D28E45] hover:shadow-lg transition-all duration-300"
           >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             {t("viewAll")}
           </Link>
         </div>

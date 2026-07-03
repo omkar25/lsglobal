@@ -59,7 +59,9 @@ export function HeroCarousel() {
             src={s.image}
             alt={`Slide ${s.id}`}
             fill
-            className="object-cover"
+            className={`object-cover transition-transform duration-7000 ease-out ${
+              index === currentSlide ? "scale-110" : "scale-100"
+            }`}
             priority={index === 0}
           />
         </div>
@@ -67,6 +69,7 @@ export function HeroCarousel() {
 
       {/* Dark Overlay for better text visibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/50" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/60 to-transparent" />
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center">
@@ -135,20 +138,20 @@ export function HeroCarousel() {
       </div>
 
       {/* Navigation Arrows */}
-      <div className="absolute bottom-4 sm:bottom-8 left-2 sm:left-4 flex">
+      <div className="absolute bottom-4 sm:bottom-8 left-2 sm:left-4 flex shadow-lg">
         <button
           onClick={prevSlide}
-          className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 hover:bg-white flex items-center justify-center transition-colors"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white hover:text-[#313639] flex items-center justify-center transition-all duration-300 group"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-[#313639]" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-[#313639] group-hover:-translate-x-0.5 transition-all" />
         </button>
         <button
           onClick={nextSlide}
-          className="w-10 h-10 sm:w-12 sm:h-12 bg-[#D28E45] hover:bg-[#C07D35] flex items-center justify-center transition-colors"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-[#D28E45] hover:bg-[#C07D35] flex items-center justify-center transition-all duration-300 group"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:translate-x-0.5 transition-transform" />
         </button>
       </div>
 
@@ -158,10 +161,10 @@ export function HeroCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 sm:h-2.5 rounded-full transition-all duration-500 ${
               index === currentSlide
-                ? "bg-[#D28E45] scale-125"
-                : "bg-white/60 hover:bg-white/80"
+                ? "w-8 sm:w-10 bg-[#D28E45]"
+                : "w-2 sm:w-2.5 bg-white/60 hover:bg-white/90"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

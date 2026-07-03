@@ -1,0 +1,197 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum Currency {
+  USD
+  EUR
+  GBP
+  INR
+  AED
+  CAD
+  AUD
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+// ============================================
+// BRAND MODEL
+// ============================================
+
+model Brand {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  logo        String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  products Product[]
+
+  @@index([slug])
+  @@map("brands")
+}
+
+// ============================================
+// CATEGORY MODEL
+// ============================================
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  image       String?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Self-referencing relation for parent-child categories
+  parentId String?
+  parent   Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children Category[] @relation("CategoryHierarchy")
+
+  // Relations
+  products Product[]
+
+  @@index([slug])
+  @@index([parentId])
+  @@map("categories")
+}
+
+// ============================================
+// PRODUCT MODEL
+// ============================================
+
+model Product {
+  id               String        @id @default(cuid())
+  productCode      String        @unique @db.VarChar(8)
+  name             String
+  slug             String        @unique
+  description      String?       @db.Text
+  shortDescription String?       @db.VarChar(500)
+  price            Decimal       @db.Decimal(10, 2)
+  salePrice        Decimal?      @db.Decimal(10, 2)
+  currency         Currency      @default(USD)
+  status           ProductStatus @default(DRAFT)
+  isPublished      Boolean       @default(false)
+  isFeatured       Boolean       @default(false)
+  stock            Int           @default(0)
+  sku              String?       @unique
+  metaTitle        String?       @db.VarChar(70)
+  metaDescription  String?       @db.VarChar(160)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  // Relations
+  brandId    String?
+  brand      Brand?    @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  images   ProductImage[]
+  features ProductFeature[]
+  reviews  ProductReview[]
+
+  @@index([slug])
+  @@index([productCode])
+  @@index([brandId])
+  @@index([categoryId])
+  @@index([isPublished])
+  @@index([isFeatured])
+  @@index([price])
+  @@index([createdAt])
+  @@map("products")
+}
+
+// ============================================
+// PRODUCT IMAGE MODEL
+// ============================================
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  sortOrder Int      @default(0)
+  isPrimary Boolean  @default(false)
+  fileId    String?  // ImageKit file ID for deletion
+  fileName  String?  // Original filename stored in ImageKit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([sortOrder])
+  @@index([fileId])
+  @@map("product_images")
+}
+
+// ============================================
+// PRODUCT FEATURE MODEL
+// ============================================
+
+model ProductFeature {
+  id        String   @id @default(cuid())
+  title     String
+  value     String
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([sortOrder])
+  @@map("product_features")
+}
+
+// ============================================
+// PRODUCT REVIEW MODEL
+// ============================================
+
+model ProductReview {
+  id         String   @id @default(cuid())
+  userName   String
+  email      String
+  rating     Int      @db.SmallInt
+  title      String?
+  comment    String?  @db.Text
+  isApproved Boolean  @default(false)
+  isVerified Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([isApproved])
+  @@index([rating])
+  @@index([createdAt])
+  @@map("product_reviews")
+}

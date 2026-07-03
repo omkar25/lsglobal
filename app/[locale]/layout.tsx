@@ -4,10 +4,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Nunito_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
-import { Header } from "@/components/shared/common/header/Header";
-import { Footer } from "@/components/shared/common/footer/Footer";
-import { FloatingButtons } from "@/components/shared/common/floatingbuttons/FloatingButtons";
-import { Chatbot } from "@/components/chatbot/Chatbot";
+import { PublicLayout } from "@/components/layouts/PublicLayout";
+import { categoryService } from "@/services";
 import "../globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -35,6 +33,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages();
 
+  const categoryTree = await categoryService.getCategoryTree(true);
+  const navCategories = categoryTree.map((c) => ({
+    id: c.id,
+    name: c.name,
+    slug: c.slug,
+  }));
+
   return (
     <html
       lang={locale}
@@ -42,11 +47,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <FloatingButtons />
-          <Chatbot />
+          <PublicLayout navCategories={navCategories}>{children}</PublicLayout>
         </NextIntlClientProvider>
       </body>
     </html>

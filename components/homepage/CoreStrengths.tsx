@@ -30,7 +30,7 @@ export function CoreStrengths() {
         {/* Strengths Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
           {/* Strength 1 */}
-          <div className="flex gap-3 sm:gap-4">
+          <div className="flex gap-3 sm:gap-4 p-5 sm:p-6 bg-[#F9F9F9] border-t-2 border-transparent hover:border-[#D28E45] hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <span className="text-3xl sm:text-4xl font-light text-[#D28E45]">01</span>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-[#313639] mb-1.5 sm:mb-2">
@@ -43,7 +43,7 @@ export function CoreStrengths() {
           </div>
 
           {/* Strength 2 */}
-          <div className="flex gap-3 sm:gap-4">
+          <div className="flex gap-3 sm:gap-4 p-5 sm:p-6 bg-[#F9F9F9] border-t-2 border-transparent hover:border-[#D28E45] hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <span className="text-3xl sm:text-4xl font-light text-[#D28E45]">02</span>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-[#313639] mb-1.5 sm:mb-2">
@@ -56,7 +56,7 @@ export function CoreStrengths() {
           </div>
 
           {/* Strength 3 */}
-          <div className="flex gap-3 sm:gap-4 sm:col-span-2 md:col-span-1">
+          <div className="flex gap-3 sm:gap-4 sm:col-span-2 md:col-span-1 p-5 sm:p-6 bg-[#F9F9F9] border-t-2 border-transparent hover:border-[#D28E45] hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <span className="text-3xl sm:text-4xl font-light text-[#D28E45]">03</span>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-[#313639] mb-1.5 sm:mb-2">
@@ -97,7 +97,7 @@ export function CoreStrengths() {
             {/* About Us Button */}
             <Link
               href="/about"
-              className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-[#D28E45] text-[#313639] text-sm sm:text-base font-semibold hover:bg-[#D28E45] hover:text-white transition-all duration-300"
+              className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-[#D28E45] text-[#313639] text-sm sm:text-base font-semibold hover:bg-[#D28E45] hover:text-white hover:shadow-lg transition-all duration-300"
             >
               {t("aboutUs")}
             </Link>

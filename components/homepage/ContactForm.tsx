@@ -103,12 +103,13 @@ export function ContactForm() {
           sizes="100vw"
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Form Container */}
       <div className="relative z-10 container mx-auto px-4 py-10 sm:py-16 md:py-24">
         <div className="max-w-md mx-auto sm:mx-0">
-          <div className="bg-[#313639] p-5 sm:p-8 md:p-10 rounded-lg sm:rounded-none">
+          <div className="bg-[#313639]/95 backdrop-blur-sm p-5 sm:p-8 md:p-10 rounded-lg sm:rounded-none border-t-4 border-[#D28E45] shadow-2xl">
             {/* Header */}
             <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#D28E45] mb-1.5 sm:mb-2">
               {t("subtitle")}
@@ -192,7 +193,7 @@ export function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-2.5 sm:py-3 bg-[#D28E45] text-white text-sm sm:text-base font-semibold hover:bg-[#C07D35] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-2.5 sm:py-3 bg-[#D28E45] text-white text-sm sm:text-base font-semibold hover:bg-[#C07D35] hover:shadow-lg active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "..." : t("submit")}
               </button>

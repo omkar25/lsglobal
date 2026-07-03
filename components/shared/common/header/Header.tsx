@@ -8,13 +8,11 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/shared/common/language/LanguageSwitcher";
 
-const productLinks = [
-  { href: "/products/chemicals", key: "chemicals" },
-  { href: "/products/handicrafts", key: "handicrafts" },
-  { href: "/products/home-textiles", key: "homeTextiles" },
-  { href: "/products/medical-equipment", key: "medicalEquipment" },
-  { href: "/products/spices", key: "spices" },
-] as const;
+interface NavCategory {
+  id: string;
+  name: string;
+  slug: string;
+}
 
 const serviceLinks = [
   { href: "/industries-we-serve", key: "industries" },
@@ -24,7 +22,7 @@ const serviceLinks = [
   { href: "/request-quotation", key: "rfq" },
 ] as const;
 
-export function Header() {
+export function Header({ navCategories = [] }: { navCategories?: NavCategory[] }) {
   const t = useTranslations();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,7 +77,7 @@ export function Header() {
             <button
               onClick={() => setProductsOpen(!productsOpen)}
               className={`flex items-center gap-1 text-sm font-semibold transition-colors ${
-                isActive("/products")
+                isActive("/products") || isActive("/c/")
                   ? "text-[#D28E45]"
                   : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
               }`}
@@ -92,14 +90,14 @@ export function Header() {
             {productsOpen && (
               <div className="absolute top-full left-0 mt-2 w-72 rounded-md border bg-white shadow-lg dark:bg-zinc-900 dark:border-zinc-800">
                 <div className="py-2">
-                  {productLinks.map((link) => (
+                  {navCategories.map((category) => (
                     <Link
-                      key={link.key}
-                      href={link.href}
+                      key={category.id}
+                      href={`/c/${category.slug}`}
                       className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors"
                       onClick={() => setProductsOpen(false)}
                     >
-                      {t(`nav.products.${link.key}`)}
+                      {category.name}
                     </Link>
                   ))}
                 </div>
@@ -213,14 +211,14 @@ export function Header() {
               </button>
               {productsOpen && (
                 <div className="pl-4 flex flex-col gap-1">
-                  {productLinks.map((link) => (
+                  {navCategories.map((category) => (
                     <Link
-                      key={link.key}
-                      href={link.href}
+                      key={category.id}
+                      href={`/c/${category.slug}`}
                       className="py-2 text-sm text-gray-700 dark:text-gray-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {t(`nav.products.${link.key}`)}
+                      {category.name}
                     </Link>
                   ))}
                 </div>
