@@ -162,22 +162,26 @@
     "contactUs": "CONTACT US",
     "slides": {
       "1": {
+        "title": "Import & Export",
+        "description": "Connecting businesses worldwide with reliable trade solutions."
+      },
+      "2": {
         "title": "Delivering Trusted Healthcare Solutions",
         "description": "Reliable medical equipment ensuring precision, safety, and care for global healthcare excellence."
       },
-      "2": {
+      "3": {
         "title": "Empowering Industries With Chemistry",
         "description": "High-quality chemicals supporting industrial innovation, safety, and sustainable global manufacturing growth."
       },
-      "3": {
+      "4": {
         "title": "Crafting Beauty With Tradition",
         "description": "Authentic handmade crafts blending tradition, creativity, and culture for timeless global appeal."
       },
-      "4": {
+      "5": {
         "title": "Redefining Comfort And Style",
         "description": "Luxurious home textiles combining comfort, quality, and design to enhance modern lifestyles."
       },
-      "5": {
+      "6": {
         "title": "Bringing Flavor To Life",
         "description": "Pure Indian spices delivering rich aroma, authentic taste, and freshness worldwide daily."
       }

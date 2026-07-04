@@ -8,11 +8,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import BlurText from "@/components/ui/BlurText";
 
 const slides = [
-  { id: 1, image: "/images/sliders/slider_01.png", position: "right" },
-  { id: 2, image: "/images/sliders/slider_02.png", position: "left" },
-  { id: 3, image: "/images/sliders/slider_03.png", position: "right" },
-  { id: 4, image: "/images/sliders/slider_04.png", position: "left" },
-  { id: 5, image: "/images/sliders/slider_05.png", position: "right" },
+  { id: 1, image: "/images/sliders/export_import.png", position: "right"},
+  { id: 2, image: "/images/sliders/slider_01.png", position: "left" },
+  { id: 3, image: "/images/sliders/slider_02.png", position: "right" },
+  { id: 4, image: "/images/sliders/slider_03.png", position: "left" },
+  { id: 5, image: "/images/sliders/slider_04.png", position: "right" },
+  { id: 6, image: "/images/sliders/slider_05.png", position: "left" },
 ] as const;
 
 export function HeroCarousel() {
@@ -60,7 +61,7 @@ export function HeroCarousel() {
             alt={`Slide ${s.id}`}
             fill
             className={`object-cover transition-transform duration-7000 ease-out ${
-              index === currentSlide ? "scale-110" : "scale-100"
+              index === currentSlide ? "scale-100" : "scale-100"
             }`}
             priority={index === 0}
           />
