@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Star, ShoppingCart, Heart, Share2, Check, Minus, Plus } from "lucide-react";
+import { Star, FileText, Heart, Share2, Check, Minus, Plus } from "lucide-react";
 import type { ProductWithDetails } from "@/types/product";
+import { RfqModal } from "@/components/rfq/RfqModal";
 
 interface ProductInfoProps {
   product: ProductWithDetails;
@@ -10,6 +11,7 @@ interface ProductInfoProps {
 
 export function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1);
+  const [isRfqOpen, setIsRfqOpen] = useState(false);
 
   const formatPrice = (price: number | { toString: () => string }, currency: string) => {
     const numPrice = typeof price === "number" ? price : parseFloat(price.toString());
@@ -151,13 +153,23 @@ export function ProductInfo({ product }: ProductInfoProps) {
             </button>
           </div>
 
-          {/* Add to Cart Button */}
-          <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#D28E45] text-white rounded-lg hover:bg-[#C07D35] transition-colors font-medium">
-            <ShoppingCart className="w-5 h-5" />
-            Add to Cart
+          {/* Request Quote (RFQ) Button */}
+          <button
+            onClick={() => setIsRfqOpen(true)}
+            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#D28E45] text-white rounded-lg hover:bg-[#C07D35] transition-colors font-medium"
+          >
+            <FileText className="w-5 h-5" />
+            Request Quote (RFQ)
           </button>
         </div>
       )}
+
+      {/* RFQ Modal */}
+      <RfqModal
+        isOpen={isRfqOpen}
+        onClose={() => setIsRfqOpen(false)}
+        initialProductName={product.name}
+      />
 
       {/* Action Buttons */}
       <div className="flex items-center gap-4 pt-4">

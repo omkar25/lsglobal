@@ -148,6 +148,16 @@ export function Header({ navCategories = [] }: { navCategories?: NavCategory[] }
           >
             {t("nav.contactUs")}
           </Link>
+          <Link
+            href="/verification"
+            className={`text-sm font-semibold transition-colors ${
+              isActive("/verification")
+                ? "text-[#D28E45]"
+                : "text-[#313639] hover:text-[#D28E45] dark:text-white dark:hover:text-[#D28E45]"
+            }`}
+          >
+            {t("nav.verification")}
+          </Link>
         </nav>
 
         {/* Language Switcher & Mobile Menu Button */}
@@ -262,6 +272,17 @@ export function Header({ navCategories = [] }: { navCategories?: NavCategory[] }
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.contactUs")}
+            </Link>
+            <Link
+              href="/verification"
+              className={`py-2 text-sm font-semibold ${
+                isActive("/verification")
+                  ? "text-[#D28E45]"
+                  : "text-gray-900 dark:text-white"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.verification")}
             </Link>
 
             {/* Mobile Language Switcher */}

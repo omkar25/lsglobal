@@ -137,7 +137,7 @@ export const UpdateProductSchema = z.object({
   name: z.string().min(1).max(255).optional(),
   description: z.string().max(10000).nullish(),
   shortDescription: z.string().max(500).nullish(),
-  price: z.number().positive().max(99999999.99).optional(),
+  price: z.number().min(0).max(99999999.99).optional(),
   salePrice: z.number().positive().max(99999999.99).nullish(),
   currency: CurrencySchema.optional(),
   isPublished: z.boolean().optional(),

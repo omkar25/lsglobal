@@ -109,6 +109,16 @@ export function ProductForm({ product, categories, brands }: ProductFormProps) {
         router.push("/admin/products");
         router.refresh();
       } else {
+        const details = (result as { details?: Record<string, string[] | undefined> }).details;
+        if (details) {
+          const errors: Record<string, string> = {};
+          Object.entries(details).forEach(([field, messages]) => {
+            if (messages && messages.length > 0) {
+              errors[field] = messages[0];
+            }
+          });
+          setFieldErrors(errors);
+        }
         setError(result.error || "An error occurred");
       }
     } catch {
@@ -306,8 +316,11 @@ export function ProductForm({ product, categories, brands }: ProductFormProps) {
                   onChange={(e) => setFormData({ ...formData, price: parseFloat(e.target.value) || 0 })}
                   min="0"
                   step="0.01"
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 outline-none"
+                  className={`w-full px-2 py-1.5 text-sm border rounded focus:ring-1 focus:ring-blue-500 outline-none ${
+                    fieldErrors.price ? "border-red-500 bg-red-50" : "border-gray-300"
+                  }`}
                 />
+                {fieldErrors.price && <p className="mt-0.5 text-xs text-red-500">{fieldErrors.price}</p>}
               </div>
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">Sale Price</label>
@@ -317,8 +330,11 @@ export function ProductForm({ product, categories, brands }: ProductFormProps) {
                   onChange={(e) => setFormData({ ...formData, salePrice: e.target.value ? parseFloat(e.target.value) : undefined })}
                   min="0"
                   step="0.01"
-                  className="w-full px-2 py-1.5 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 outline-none"
+                  className={`w-full px-2 py-1.5 text-sm border rounded focus:ring-1 focus:ring-blue-500 outline-none ${
+                    fieldErrors.salePrice ? "border-red-500 bg-red-50" : "border-gray-300"
+                  }`}
                 />
+                {fieldErrors.salePrice && <p className="mt-0.5 text-xs text-red-500">{fieldErrors.salePrice}</p>}
               </div>
               <div>
                 <label className="block text-xs font-medium text-gray-700 mb-1">Currency</label>

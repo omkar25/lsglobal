@@ -12,6 +12,7 @@
     "ourProducts": "Our Products",
     "servicesMenu": "Services",
     "contactUs": "Contact Us",
+    "verification": "Verification",
     "products": {
       "chemicals": "Chemicals Industry",
       "handicrafts": "Handicrafts Industry",
@@ -25,6 +26,31 @@
       "becomeBuyer": "Become a Buyer",
       "becomeSupplier": "Become a Supplier",
       "rfq": "Request Quotation"
+    }
+  },
+  "verificationPage": {
+    "hero": {
+      "title": "Company Verification Center",
+      "subtitle": "Our official registrations and compliance credentials. Verify our legitimacy and download the supporting certificates below."
+    },
+    "details": {
+      "registrationCertificate": "Registration Certificate Number",
+      "fileNumber": "File Number",
+      "iec": "IEC Number",
+      "gst": "GST Number",
+      "msme": "MSME (Udyam) Registration Number",
+      "pan": "Company PAN",
+      "panNote": "Partially hidden for security"
+    },
+    "certificate": {
+      "alt": "Company Registration Certificate",
+      "viewFull": "View Full Certificate"
+    },
+    "downloads": {
+      "title": "Downloadable Certificates",
+      "description": "Download the complete set of verification documents in a single PDF for your records.",
+      "fileTitle": "Company Verification Details",
+      "fileType": "PDF Document"
     }
   },
   "home": {

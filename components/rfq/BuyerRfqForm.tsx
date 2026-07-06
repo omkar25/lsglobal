@@ -14,10 +14,15 @@ type FormData = {
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
 
-export function BuyerRfqForm() {
+interface BuyerRfqFormProps {
+  initialProductName?: string;
+  onSuccess?: () => void;
+}
+
+export function BuyerRfqForm({ initialProductName = "", onSuccess }: BuyerRfqFormProps = {}) {
   const t = useTranslations("rfqPage.buyerForm");
   const [formData, setFormData] = useState<FormData>({
-    productName: "",
+    productName: initialProductName,
     quantity: "",
     destinationCountry: "",
     email: "",
@@ -83,7 +88,7 @@ export function BuyerRfqForm() {
 
       setSubmitStatus("success");
       setFormData({
-        productName: "",
+        productName: initialProductName,
         quantity: "",
         destinationCountry: "",
         email: "",
@@ -91,6 +96,7 @@ export function BuyerRfqForm() {
         additionalDetails: "",
       });
       setErrors({});
+      onSuccess?.();
     } catch {
       setSubmitStatus("error");
     } finally {
