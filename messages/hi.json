@@ -615,7 +615,7 @@
       "email": "ईमेल पता",
       "emailPlaceholder": "your@email.com",
       "whatsapp": "व्हाट्सएप नंबर",
-      "whatsappPlaceholder": "+971...",
+      "whatsappPlaceholder": "+91 98765 43210",
       "additionalDetails": "अतिरिक्त विवरण",
       "additionalDetailsPlaceholder": "विनिर्देश, गुणवत्ता आवश्यकताएं, डिलीवरी समयसीमा...",
       "submit": "RFQ जमा करें",
@@ -627,7 +627,8 @@
         "countryRequired": "गंतव्य देश आवश्यक है",
         "emailRequired": "ईमेल आवश्यक है",
         "emailInvalid": "कृपया वैध ईमेल दर्ज करें",
-        "whatsappRequired": "व्हाट्सएप नंबर आवश्यक है"
+        "whatsappRequired": "व्हाट्सएप नंबर आवश्यक है",
+        "whatsappInvalid": "कृपया वैध 10 अंकों का भारतीय मोबाइल नंबर दर्ज करें"
       }
     },
     "supplierForm": {
@@ -710,7 +711,7 @@
       "email": "ईमेल पता",
       "emailPlaceholder": "your@email.com",
       "whatsapp": "व्हाट्सएप नंबर",
-      "whatsappPlaceholder": "+971...",
+      "whatsappPlaceholder": "+91 98765 43210",
       "additionalDetails": "अतिरिक्त आवश्यकताएं",
       "additionalDetailsPlaceholder": "विनिर्देश, आवश्यक प्रमाणपत्र, समयसीमा...",
       "submit": "अनुरोध जमा करें",
@@ -722,7 +723,8 @@
         "countryRequired": "गंतव्य देश आवश्यक है",
         "emailRequired": "ईमेल आवश्यक है",
         "emailInvalid": "कृपया वैध ईमेल दर्ज करें",
-        "whatsappRequired": "व्हाट्सएप नंबर आवश्यक है"
+        "whatsappRequired": "व्हाट्सएप नंबर आवश्यक है",
+        "whatsappInvalid": "कृपया वैध 10 अंकों का भारतीय मोबाइल नंबर दर्ज करें"
       }
     }
   },

@@ -615,7 +615,7 @@
       "email": "Email Address",
       "emailPlaceholder": "your@email.com",
       "whatsapp": "WhatsApp Number",
-      "whatsappPlaceholder": "+971...",
+      "whatsappPlaceholder": "+91 98765 43210",
       "additionalDetails": "Additional Details",
       "additionalDetailsPlaceholder": "Specifications, quality requirements, delivery timeline...",
       "submit": "Submit RFQ",
@@ -627,7 +627,8 @@
         "countryRequired": "Destination country is required",
         "emailRequired": "Email is required",
         "emailInvalid": "Please enter a valid email",
-        "whatsappRequired": "WhatsApp number is required"
+        "whatsappRequired": "WhatsApp number is required",
+        "whatsappInvalid": "Enter a valid 10-digit Indian mobile number"
       }
     },
     "supplierForm": {
@@ -710,7 +711,7 @@
       "email": "Email Address",
       "emailPlaceholder": "your@email.com",
       "whatsapp": "WhatsApp Number",
-      "whatsappPlaceholder": "+971...",
+      "whatsappPlaceholder": "+91 98765 43210",
       "additionalDetails": "Additional Requirements",
       "additionalDetailsPlaceholder": "Specifications, certifications needed, timeline...",
       "submit": "Submit Request",
@@ -722,7 +723,8 @@
         "countryRequired": "Destination country is required",
         "emailRequired": "Email is required",
         "emailInvalid": "Please enter a valid email",
-        "whatsappRequired": "WhatsApp number is required"
+        "whatsappRequired": "WhatsApp number is required",
+        "whatsappInvalid": "Enter a valid 10-digit Indian mobile number"
       }
     }
   },

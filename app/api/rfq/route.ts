@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
+import { isValidIndianMobile } from "@/lib/validations";
 
 const buyerRfqSchema = z.object({
   type: z.literal("buyer"),
@@ -8,7 +9,10 @@ const buyerRfqSchema = z.object({
   quantity: z.string().min(1, "Quantity is required"),
   destinationCountry: z.string().min(2, "Destination country is required"),
   email: z.string().email("Invalid email address"),
-  whatsapp: z.string().min(10, "WhatsApp number is required"),
+  whatsapp: z
+    .string()
+    .min(10, "WhatsApp number is required")
+    .refine(isValidIndianMobile, "Enter a valid 10-digit Indian mobile number"),
   additionalDetails: z.string().optional(),
 });
 
@@ -71,6 +75,10 @@ export async function POST(request: NextRequest) {
     let detailsText = "";
 
     if (isBuyer) {
+      const whatsappDigits = data.whatsapp.replace(/\D/g, "").replace(/^0+/, "");
+      const whatsappLink = whatsappDigits.startsWith("91")
+        ? whatsappDigits
+        : `91${whatsappDigits}`;
       detailsHtml = `
         <div style="display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee;">
           <span style="background-color: #D28E45; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; min-width: 120px; text-align: center;">PRODUCT</span>
@@ -90,7 +98,7 @@ export async function POST(request: NextRequest) {
         </div>
         <div style="display: flex; align-items: center; padding: 15px 0;">
           <span style="background-color: #D28E45; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; min-width: 120px; text-align: center;">WHATSAPP</span>
-          <a href="https://wa.me/${data.whatsapp.replace(/[^0-9]/g, '')}" style="color: #D28E45; font-size: 15px; margin-left: 20px; text-decoration: none; font-weight: 500;">${data.whatsapp}</a>
+          <a href="https://wa.me/${whatsappLink}" style="color: #D28E45; font-size: 15px; margin-left: 20px; text-decoration: none; font-weight: 500;">${data.whatsapp}</a>
         </div>
       `;
       detailsText = `

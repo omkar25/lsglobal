@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Check, Globe, Shield, Truck, Clock, HeadphonesIcon } from "lucide-react";
+import { isValidIndianMobile } from "@/lib/validations";
 
 type FormData = {
   productName: string;
@@ -48,7 +49,11 @@ export function BecomeBuyerPage() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = t("form.errors.emailInvalid");
     }
-    if (!formData.whatsapp.trim()) newErrors.whatsapp = t("form.errors.whatsappRequired");
+    if (!formData.whatsapp.trim()) {
+      newErrors.whatsapp = t("form.errors.whatsappRequired");
+    } else if (!isValidIndianMobile(formData.whatsapp)) {
+      newErrors.whatsapp = t("form.errors.whatsappInvalid");
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -148,7 +153,7 @@ export function BecomeBuyerPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-[#313639] mb-2">{t("form.whatsapp")} *</label>
-                  <input type="tel" name="whatsapp" value={formData.whatsapp} onChange={handleChange} placeholder={t("form.whatsappPlaceholder")} className={inputClass("whatsapp")} />
+                  <input type="tel" name="whatsapp" inputMode="numeric" autoComplete="tel" maxLength={15} value={formData.whatsapp} onChange={handleChange} placeholder={t("form.whatsappPlaceholder")} className={inputClass("whatsapp")} />
                   {errors.whatsapp && <p className="text-red-500 text-sm mt-1">{errors.whatsapp}</p>}
                 </div>
               </div>

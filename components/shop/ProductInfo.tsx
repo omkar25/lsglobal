@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Star, FileText, Heart, Share2, Check, Minus, Plus } from "lucide-react";
+import { Star, FileText, Heart, Share2 } from "lucide-react";
 import type { ProductWithDetails } from "@/types/product";
 import { RfqModal } from "@/components/rfq/RfqModal";
 
@@ -10,36 +10,7 @@ interface ProductInfoProps {
 }
 
 export function ProductInfo({ product }: ProductInfoProps) {
-  const [quantity, setQuantity] = useState(1);
   const [isRfqOpen, setIsRfqOpen] = useState(false);
-
-  const formatPrice = (price: number | { toString: () => string }, currency: string) => {
-    const numPrice = typeof price === "number" ? price : parseFloat(price.toString());
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency,
-    }).format(numPrice);
-  };
-
-  const discount = product.salePrice
-    ? Math.round(
-        ((parseFloat(product.price.toString()) - parseFloat(product.salePrice.toString())) /
-          parseFloat(product.price.toString())) *
-          100
-      )
-    : 0;
-
-  const incrementQuantity = () => {
-    if (quantity < product.stock) {
-      setQuantity((q) => q + 1);
-    }
-  };
-
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity((q) => q - 1);
-    }
-  };
 
   return (
     <div className="space-y-6">
@@ -79,45 +50,10 @@ export function ProductInfo({ product }: ProductInfoProps) {
         </span>
       </div>
 
-      {/* Price */}
-      <div className="flex items-baseline gap-3">
-        {product.salePrice ? (
-          <>
-            <span className="text-3xl font-bold text-red-600">
-              {formatPrice(product.salePrice, product.currency)}
-            </span>
-            <span className="text-xl text-gray-400 line-through">
-              {formatPrice(product.price, product.currency)}
-            </span>
-            <span className="px-2 py-1 bg-red-100 text-red-700 text-sm font-medium rounded">
-              -{discount}%
-            </span>
-          </>
-        ) : (
-          <span className="text-3xl font-bold text-gray-900">
-            {formatPrice(product.price, product.currency)}
-          </span>
-        )}
-      </div>
-
       {/* Short Description */}
       {product.shortDescription && (
         <p className="text-gray-600">{product.shortDescription}</p>
       )}
-
-      {/* Stock Status */}
-      <div className="flex items-center gap-2">
-        {product.stock > 0 ? (
-          <>
-            <Check className="w-5 h-5 text-green-500" />
-            <span className="text-green-600 font-medium">
-              In Stock ({product.stock} available)
-            </span>
-          </>
-        ) : (
-          <span className="text-red-600 font-medium">Out of Stock</span>
-        )}
-      </div>
 
       {/* Product Code & SKU */}
       <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -131,38 +67,16 @@ export function ProductInfo({ product }: ProductInfoProps) {
         )}
       </div>
 
-      {/* Quantity & Add to Cart */}
-      {product.stock > 0 && (
-        <div className="flex items-center gap-4">
-          {/* Quantity Selector */}
-          <div className="flex items-center border border-gray-300 rounded-lg">
-            <button
-              onClick={decrementQuantity}
-              disabled={quantity <= 1}
-              className="p-3 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="w-12 text-center font-medium">{quantity}</span>
-            <button
-              onClick={incrementQuantity}
-              disabled={quantity >= product.stock}
-              className="p-3 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
-
-          {/* Request Quote (RFQ) Button */}
-          <button
-            onClick={() => setIsRfqOpen(true)}
-            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#D28E45] text-white rounded-lg hover:bg-[#C07D35] transition-colors font-medium"
-          >
-            <FileText className="w-5 h-5" />
-            Request Quote (RFQ)
-          </button>
-        </div>
-      )}
+      {/* Request Quote (RFQ) Button */}
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+        <button
+          onClick={() => setIsRfqOpen(true)}
+          className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 min-h-12 bg-[#D28E45] text-white rounded-lg hover:bg-[#C07D35] active:bg-[#C07D35] transition-colors font-medium text-sm sm:text-base whitespace-nowrap"
+        >
+          <FileText className="w-5 h-5 shrink-0" />
+          Request Quote (RFQ)
+        </button>
+      </div>
 
       {/* RFQ Modal */}
       <RfqModal

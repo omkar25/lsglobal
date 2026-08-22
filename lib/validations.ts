@@ -34,3 +34,13 @@ export const loginFormSchema = z.object({
 });
 
 export type LoginFormData = z.infer<typeof loginFormSchema>;
+
+export const INDIAN_MOBILE_REGEX = /^(?:\+?91|0)?[6-9]\d{9}$/;
+
+export function normalizeIndianMobile(value: string): string {
+  return value.replace(/[\s()+-]/g, "");
+}
+
+export function isValidIndianMobile(value: string): boolean {
+  return INDIAN_MOBILE_REGEX.test(normalizeIndianMobile(value));
+}

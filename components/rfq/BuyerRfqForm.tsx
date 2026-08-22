@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { isValidIndianMobile } from "@/lib/validations";
 
 type FormData = {
   productName: string;
@@ -52,6 +53,8 @@ export function BuyerRfqForm({ initialProductName = "", onSuccess }: BuyerRfqFor
     }
     if (!formData.whatsapp.trim()) {
       newErrors.whatsapp = t("errors.whatsappRequired");
+    } else if (!isValidIndianMobile(formData.whatsapp)) {
+      newErrors.whatsapp = t("errors.whatsappInvalid");
     }
 
     setErrors(newErrors);
@@ -195,6 +198,9 @@ export function BuyerRfqForm({ initialProductName = "", onSuccess }: BuyerRfqFor
           <input
             type="tel"
             name="whatsapp"
+            inputMode="numeric"
+            autoComplete="tel"
+            maxLength={15}
             value={formData.whatsapp}
             onChange={handleChange}
             placeholder={t("whatsappPlaceholder")}
