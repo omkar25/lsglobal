@@ -16,6 +16,8 @@ interface ProductFormProps {
 
 const currencies: Currency[] = ["USD", "EUR", "GBP", "INR", "AED", "CAD", "AUD"];
 
+const SHOW_PRICING = false;
+
 export function ProductForm({ product, categories, brands }: ProductFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -305,6 +307,7 @@ export function ProductForm({ product, categories, brands }: ProductFormProps) {
           </div>
 
           {/* Pricing */}
+          {SHOW_PRICING && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
             <h2 className="text-sm font-semibold text-gray-900 mb-3">Pricing</h2>
             <div className="grid grid-cols-2 gap-3">
@@ -369,6 +372,7 @@ export function ProductForm({ product, categories, brands }: ProductFormProps) {
               </div>
             </div>
           </div>
+          )}
 
           {/* Status */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
