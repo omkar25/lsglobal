@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useMemo } from "react";
 import { Search, X } from "lucide-react";
 
+const SHOW_PRICING = false;
+
 export function ProductFiltersBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -88,8 +90,12 @@ export function ProductFiltersBar() {
         >
           <option value="newest">Newest First</option>
           <option value="oldest">Oldest First</option>
-          <option value="price_asc">Price: Low to High</option>
-          <option value="price_desc">Price: High to Low</option>
+          {SHOW_PRICING && (
+            <>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+            </>
+          )}
           <option value="name_asc">Name: A-Z</option>
           <option value="name_desc">Name: Z-A</option>
           <option value="rating">Highest Rated</option>

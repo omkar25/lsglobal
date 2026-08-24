@@ -7,6 +7,8 @@ interface RelatedProductsProps {
   products: ProductListItem[];
 }
 
+const SHOW_PRICING = false;
+
 export function RelatedProducts({ products }: RelatedProductsProps) {
   const formatPrice = (price: number | { toString: () => string }, currency: string) => {
     const numPrice = typeof price === "number" ? price : parseFloat(price.toString());
@@ -38,7 +40,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
                 <ShoppingCart className="w-8 h-8" />
               </div>
             )}
-            {product.salePrice && (
+            {SHOW_PRICING && product.salePrice && (
               <span className="absolute top-2 left-2 px-2 py-0.5 bg-red-500 text-white text-xs font-medium rounded">
                 Sale
               </span>
@@ -69,6 +71,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
             </div>
 
             {/* Price */}
+            {SHOW_PRICING && (
             <div className="flex items-center gap-2">
               {product.salePrice ? (
                 <>
@@ -85,6 +88,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
                 </span>
               )}
             </div>
+            )}
           </div>
         </Link>
       ))}

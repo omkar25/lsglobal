@@ -11,6 +11,8 @@ interface ProductsTableProps {
   products: ProductListItem[];
 }
 
+const SHOW_PRICING = false;
+
 export function ProductsTable({ products }: ProductsTableProps) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
 
@@ -66,9 +68,11 @@ export function ProductsTable({ products }: ProductsTableProps) {
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Code
             </th>
+            {SHOW_PRICING && (
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Price
             </th>
+            )}
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Stock
             </th>
@@ -122,6 +126,7 @@ export function ProductsTable({ products }: ProductsTableProps) {
                   {product.productCode}
                 </code>
               </td>
+              {SHOW_PRICING && (
               <td className="px-6 py-4">
                 <div>
                   <p className="font-medium text-gray-900">
@@ -134,6 +139,7 @@ export function ProductsTable({ products }: ProductsTableProps) {
                   )}
                 </div>
               </td>
+              )}
               <td className="px-6 py-4">
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium ${

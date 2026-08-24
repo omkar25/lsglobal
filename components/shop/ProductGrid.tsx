@@ -7,6 +7,8 @@ interface ProductGridProps {
   products: ProductListItem[];
 }
 
+const SHOW_PRICING = false;
+
 export function ProductGrid({ products }: ProductGridProps) {
   const formatPrice = (price: number | { toString: () => string }, currency: string) => {
     const numPrice = typeof price === "number" ? price : parseFloat(price.toString());
@@ -38,7 +40,7 @@ export function ProductGrid({ products }: ProductGridProps) {
                 <ShoppingCart className="w-12 h-12" />
               </div>
             )}
-            {product.salePrice && (
+            {SHOW_PRICING && product.salePrice && (
               <span className="absolute top-3 left-3 px-2 py-1 bg-red-500 text-white text-xs font-medium rounded">
                 Sale
               </span>
@@ -82,6 +84,7 @@ export function ProductGrid({ products }: ProductGridProps) {
             </div>
 
             {/* Price */}
+            {SHOW_PRICING && (
             <div className="flex items-center gap-2">
               {product.salePrice ? (
                 <>
@@ -98,9 +101,10 @@ export function ProductGrid({ products }: ProductGridProps) {
                 </span>
               )}
             </div>
+            )}
 
             {/* Stock */}
-            {product.stock === 0 && (
+            {SHOW_PRICING && product.stock === 0 && (
               <p className="text-sm text-red-500 mt-2">Out of stock</p>
             )}
           </div>

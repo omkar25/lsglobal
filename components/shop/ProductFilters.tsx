@@ -24,6 +24,8 @@ interface ProductFiltersProps {
   borderless?: boolean;
 }
 
+const SHOW_PRICING = false;
+
 export function ProductFilters({
   categories,
   brands,
@@ -184,6 +186,7 @@ export function ProductFilters({
       </div>
 
       {/* Price Range */}
+      {SHOW_PRICING && (
       <div>
         <button
           onClick={() => toggleSection("price")}
@@ -218,6 +221,7 @@ export function ProductFilters({
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }

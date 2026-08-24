@@ -2,6 +2,8 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 
+const SHOW_PRICING = false;
+
 export function SortSelect({ currentSort }: { currentSort: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -22,8 +24,12 @@ export function SortSelect({ currentSort }: { currentSort: string }) {
     >
       <option value="newest">Newest</option>
       <option value="oldest">Oldest</option>
-      <option value="price_asc">Price: Low to High</option>
-      <option value="price_desc">Price: High to Low</option>
+      {SHOW_PRICING && (
+        <>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+        </>
+      )}
       <option value="rating">Highest Rated</option>
       <option value="name_asc">Name: A-Z</option>
     </select>
